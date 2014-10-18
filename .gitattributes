@@ -1,0 +1,18 @@
+* text=auto
+
+.gitattributes text
+.gitignore text
+
+*.cmd text
+*.css text
+*.html text diff=html
+*.js text
+*.json text
+*.md text
+*.php text diff=php
+*.txt text
+
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
