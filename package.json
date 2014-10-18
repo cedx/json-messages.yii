@@ -1,0 +1,50 @@
+{
+  "author": "Cédric Belin <cedric@belin.io>",
+  "bugs": "https://github.com/cedx/json-messages.yii/issues",
+  "description": "JSON message source for Yii Framework.",
+  "homepage": "https://packagist.org/packages/cedx/json-messages-yii",
+  "license": "MIT",
+  "name": "json-messages-yii",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": {
+    "archiver": "^0.11.0",
+    "david": "^5.0.0",
+    "docgen-js": "^0.1.0",
+    "jshint": "^2.5.6",
+    "shelljs": "^0.3.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "jshintConfig": {
+    "camelcase": true,
+    "freeze": true,
+    "indent": 2,
+    "latedef": true,
+    "loopfunc": true,
+    "newcap": true,
+    "node": true,
+    "nonew": true,
+    "quotmark": "single",
+    "strict": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true
+  },
+  "scripts": {
+    "make": "node bin/make.js"
+  },
+  "yuidoc": {
+    "logo": "http://dev.belin.io/json-messages.yii/favicon.ico",
+    "name": "JSON-Messages.yii",
+    "url": "https://packagist.org/packages/cedx/json-messages-yii",
+    "options": {
+      "extension": ".php",
+      "outdir": "doc/api",
+      "paths": "lib",
+      "tabtospace": 2,
+      "theme": "spacelab"
+    }
+  }
+}
