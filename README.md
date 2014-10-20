@@ -3,7 +3,16 @@
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
-This package provides a single class, `CJsonMessageSource` which is a message source that stores translated messages in JSON files.
+This package provides a single class, `CJsonMessageSource` which is a message source that stores translated messages in JSON files. It extends from [`CPhpMessageSource`](http://www.yiiframework.com/doc/api/1.1/CPhpMessageSource) class, so its usage is basically the same.
+
+Within a JSON file, an object literal of (source, translation) pairs is defined. For example:
+
+```json
+{
+  "original message 1": "translated message 1",
+  "original message 2": "translated message 2"
+}
+```
 
 ## Documentation
 - [API Reference](http://dev.belin.io/json-messages.yii/api)
