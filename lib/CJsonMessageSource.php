@@ -42,23 +42,23 @@ class CJsonMessageSource extends CPhpMessageSource {
    * @protected
    */
   protected function loadMessages($category, $language) {
-  	$messageFile=$this->getMessageFile($category, $language);
-    
+    $messageFile=$this->getMessageFile($category, $language);
+
     $cache=($this->cacheID===false ? null : Yii::app()->getComponent($this->cacheID));
     $cacheKey=static::CACHE_KEY_PREFIX.$messageFile;
-  	if($cache && $this->cachingDuration>0) {
-  		$data=$cache->get($cacheKey);
-  		if($data!==false) return unserialize($data);
-  	}
+    if($cache && $this->cachingDuration>0) {
+      $data=$cache->get($cacheKey);
+      if($data!==false) return unserialize($data);
+    }
 
-  	$messages=(is_file($messageFile) ? CJSON::decode(file_get_contents($messageFile)) : []);
-  	if(!is_array($messages)) $messages=[];
-    
-  	if($cache) {
-  		$dependency=new CFileCacheDependency($messageFile);
-  		$cache->set($cacheKey, serialize($messages), $this->cachingDuration, $dependency);
-  	}
-    
-  	return $messages;
+    $messages=(is_file($messageFile) ? CJSON::decode(file_get_contents($messageFile)) : []);
+    if(!is_array($messages)) $messages=[];
+
+    if($cache) {
+      $dependency=new CFileCacheDependency($messageFile);
+      $cache->set($cacheKey, serialize($messages), $this->cachingDuration, $dependency);
+    }
+
+    return $messages;
   }
 }
