@@ -6,13 +6,15 @@
   "license": "MIT",
   "name": "json-messages-yii",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "devDependencies": {
-    "archiver": "^0.11.0",
-    "david": "^5.0.0",
-    "docgen-js": "^0.1.0",
-    "jshint": "^2.5.6",
-    "shelljs": "^0.3.0"
+    "david": "^6.1.1",
+    "del": "^1.1.1",
+    "docgen-js": "^0.0.1",
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-zip": "^2.0.2"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -21,7 +23,7 @@
     "camelcase": true,
     "freeze": true,
     "indent": 2,
-    "latedef": true,
+    "latedef": "nofunc",
     "loopfunc": true,
     "newcap": true,
     "node": true,
@@ -31,9 +33,6 @@
     "trailing": true,
     "undef": true,
     "unused": true
-  },
-  "scripts": {
-    "make": "node bin/make.js"
   },
   "yuidoc": {
     "logo": "http://dev.belin.io/json-messages.yii/favicon.ico",
