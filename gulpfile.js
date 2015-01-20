@@ -98,6 +98,14 @@ gulp.task('lint:js', function() {
 });
 
 /**
+ * Runs the unit tests.
+ * @method test
+ */
+gulp.task('test', function(callback) {
+  _exec('phpunit', callback);
+});
+
+/**
  * Runs a command and prints its output.
  * @method _exec
  * @param {String} command The command to run, with space-separated arguments.
@@ -107,8 +115,8 @@ gulp.task('lint:js', function() {
  */
 function _exec(command, callback) {
   child.exec(command, function(err, stdout) {
+    console.log(stdout.trim());
     if(err) console.error(err);
-    else console.log(stdout.trim());
     callback();
   });
 }

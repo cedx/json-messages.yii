@@ -18,26 +18,12 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 - [API Reference](http://dev.belin.io/json-messages.yii/api)
 
 ## Installing via [Composer](https://getcomposer.org)
-
-#### 1. Depend on it
-Add this to your project's `composer.json` file:
-
-```json
-{
-  "require": {
-    "cedx/json-messages-yii": "*"
-  }
-}
-```
-
-#### 2. Install it
-From the command line, run:
+From a command prompt, run:
 
 ```shell
-$ php composer.phar install
+$ composer require cedx/json-messages-yii
 ```
 
-#### 3. Import it
 Now in your application configuration file, you can use the following log route:
 
 ```php
