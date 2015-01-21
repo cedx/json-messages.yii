@@ -1,9 +1,4 @@
-<phpunit
-  bootstrap="test/index.php"
-  convertErrorsToExceptions="true"
-  convertNoticesToExceptions="true"
-  convertWarningsToExceptions="true">
-
+<phpunit bootstrap="test/index.php">
   <testsuites>
     <testsuite name="all">
       <directory>test</directory>
