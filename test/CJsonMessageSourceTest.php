@@ -7,11 +7,11 @@ Yii::import('application.CJsonMessageSource');
 
 /**
  * Publicly exposes the features of the `CJsonMessageSource` class.
- * @class tests.CJsonMessageSourceMock
+ * @class tests.CJsonMessageSourceStub
  * @extends CJsonMessageSource
  * @constructor
  */
-class CJsonMessageSourceMock extends CJsonMessageSource {
+class CJsonMessageSourceStub extends CJsonMessageSource {
   public function getMessageFile($category, $language) {
     return parent::getMessageFile($category, $language);
   }
@@ -31,7 +31,7 @@ class CJsonMessageSourceTest extends CTestCase {
   /**
    * The data context of the tests.
    * @property model
-   * @type CJsonMessageSourceMock
+   * @type CJsonMessageSource
    * @private
    */
   private $model;
@@ -61,7 +61,7 @@ class CJsonMessageSourceTest extends CTestCase {
    * @protected
    */
   protected function setUp() {
-    $this->model=new CJsonMessageSourceMock();
+    $this->model=new CJsonMessageSourceStub();
     $this->model->basePath=__DIR__;
     $this->model->cacheID=false;
   }
