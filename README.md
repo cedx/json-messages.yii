@@ -1,5 +1,5 @@
 # JSON-Messages.yii
-[![Release](http://img.shields.io/packagist/v/cedx/json-messages-yii.svg?style=flat)](https://packagist.org/packages/cedx/json-messages-yii) [![License](http://img.shields.io/packagist/l/cedx/json-messages-yii.svg?style=flat)](https://github.com/cedx/json-messages.yii/blob/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/json-messages-yii.svg?style=flat)](https://packagist.org/packages/cedx/json-messages-yii) [![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg?style=flat)](https://travis-ci.org/cedx/json-messages.yii)
+[![Release](http://img.shields.io/packagist/v/cedx/yii-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii-json-messages.svg?style=flat)](https://github.com/cedx/json-messages.yii/blob/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii-json-messages) [![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg?style=flat)](https://travis-ci.org/cedx/json-messages.yii)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
@@ -21,7 +21,7 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 From a command prompt, run:
 
 ```shell
-$ composer require cedx/json-messages-yii
+$ composer require cedx/yii-json-messages
 ```
 
 Now in your application configuration file, you can use the following log route:
@@ -30,7 +30,7 @@ Now in your application configuration file, you can use the following log route:
 return [
   'components' => [
     'messages' => [
-      'class' => 'ext.cedx.json-messages-yii.lib.CJsonMessageSource'
+      'class' => 'ext.cedx.yii-json-messages.lib.CJsonMessageSource'
     ]
   ]
 ];
@@ -39,4 +39,4 @@ return [
 Adjust the values as needed. Here, it's supposed that [`CApplication->extensionPath`](http://www.yiiframework.com/doc/api/1.1/CApplication#extensionPath-detail), that is the [`ext`](http://www.yiiframework.com/doc/guide/1.1/en/basics.namespace) root alias, has been set to Composer's `vendor` directory.
 
 ## License
-[JSON-Messages.yii](https://packagist.org/packages/cedx/json-messages-yii) is distributed under the MIT License.
+[JSON-Messages.yii](https://packagist.org/packages/cedx/yii-json-messages) is distributed under the MIT License.

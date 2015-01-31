@@ -2,16 +2,16 @@
   "author": "Cédric Belin <cedric@belin.io>",
   "bugs": "https://github.com/cedx/json-messages.yii/issues",
   "description": "JSON message source for Yii Framework.",
-  "homepage": "https://packagist.org/packages/cedx/json-messages-yii",
+  "homepage": "https://packagist.org/packages/cedx/yii-json-messages",
   "license": "MIT",
-  "name": "json-messages-yii",
+  "name": "yii-json-messages",
   "private": true,
   "version": "0.1.1",
   "devDependencies": {
-    "david": "^6.1.1",
     "del": "^1.1.1",
     "docgen-js": "^0.0.1",
     "gulp": "^3.8.10",
+    "gulp-david": "^0.1.0",
     "gulp-jshint": "^1.9.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-zip": "^2.0.2"
@@ -37,7 +37,7 @@
   "yuidoc": {
     "logo": "http://dev.belin.io/json-messages.yii/favicon.ico",
     "name": "JSON-Messages.yii",
-    "url": "https://packagist.org/packages/cedx/json-messages-yii",
+    "url": "https://packagist.org/packages/cedx/yii-json-messages",
     "options": {
       "extension": ".php",
       "outdir": "doc/api",

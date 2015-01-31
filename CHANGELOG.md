@@ -1,5 +1,5 @@
 # Changelog
-This file contains highlights of what changes on each version of the [JSON-Messages.yii](https://packagist.org/packages/cedx/json-messages-yii) library.
+This file contains highlights of what changes on each version of the [JSON-Messages.yii](https://packagist.org/packages/cedx/yii-json-messages) library.
 
 #### Version 0.1.1
 - Using [Gulp.js](http://gulpjs.com) as build system.
