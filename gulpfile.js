@@ -37,7 +37,7 @@ gulp.task('default', [ 'dist' ]);
  * Checks the package dependencies.
  * @method check
  */
-gulp.task('check', function(callback) {
+gulp.task('check', function() {
   return gulp.src('package.json')
     .pipe(plugins.david())
     .pipe(plugins.david.reporter);
