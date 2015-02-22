@@ -1,17 +1,18 @@
 <?php
 /**
- * Implementation of the `tests.CJsonMessageSourceTest` class.
- * @module test.CJsonMessageSourceTest
+ * Implementation of the `belin\test\i18n\JsonMessageSourceTest` class.
+ * @module test.i18n.JsonMessageSourceTest
  */
-Yii::import('application.CJsonMessageSource');
+namespace belin\tests\i18n;
+use \belin\i18n\JsonMessageSource;
 
 /**
- * Publicly exposes the features of the `CJsonMessageSource` class.
- * @class tests.CJsonMessageSourceStub
- * @extends CJsonMessageSource
+ * Publicly exposes the features of the `JsonMessageSource` class.
+ * @class belin.test.i18n.JsonMessageSourceStub
+ * @extends belin.i18n.JsonMessageSource
  * @constructor
  */
-class CJsonMessageSourceStub extends CJsonMessageSource {
+class JsonMessageSourceStub extends JsonMessageSource {
   public function getMessageFile($category, $language) {
     return parent::getMessageFile($category, $language);
   }
@@ -21,17 +22,17 @@ class CJsonMessageSourceStub extends CJsonMessageSource {
 }
 
 /**
- * Tests the features of the `CJsonMessageSource` class.
- * @class tests.CJsonMessageSourceTest
+ * Tests the features of the `belin\i18n\JsonMessageSource` class.
+ * @class belin.test.i18n.JsonMessageSourceTest
  * @extends system.test.CTestCase
  * @constructor
  */
-class CJsonMessageSourceTest extends CTestCase {
+class JsonMessageSourceTest extends \CTestCase {
 
   /**
    * The data context of the tests.
    * @property model
-   * @type CJsonMessageSource
+   * @type belin.i18n.JsonMessageSource
    * @private
    */
   private $model;
@@ -61,7 +62,7 @@ class CJsonMessageSourceTest extends CTestCase {
    * @protected
    */
   protected function setUp() {
-    $this->model=new CJsonMessageSourceStub();
+    $this->model=new JsonMessageSourceStub();
     $this->model->basePath=__DIR__;
     $this->model->cacheID=false;
   }

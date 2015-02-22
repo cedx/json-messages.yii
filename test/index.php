@@ -13,6 +13,7 @@ require_once $rootPath.'/vendor/phpunit/phpunit-story/PHPUnit/Extensions/Story/A
 spl_autoload_register([ 'YiiBase','autoload' ]);
 
 // Initialize the test application.
+Yii::setPathOfAlias('belin', $rootPath.'/lib');
 Yii::createConsoleApplication([
   'basePath'=>$rootPath.'/lib',
   'extensionPath'=>$rootPath.'/vendor'
