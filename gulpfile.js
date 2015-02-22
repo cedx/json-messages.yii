@@ -60,7 +60,7 @@ gulp.task('dist', function() {
     'composer.json',
     '*.md',
     '*.txt',
-    'lib/*.php'
+    'lib/**/*.php'
   ];
 
   return gulp.src(sources, { base: '.' })

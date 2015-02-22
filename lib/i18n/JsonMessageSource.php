@@ -1,16 +1,17 @@
 <?php
 /**
- * Implementation of the `CJsonMessageSource` class.
- * @module CJsonMessageSource
+ * Implementation of the `belin\i18n\JsonMessageSource` class.
+ * @module i18n.JsonMessageSource
  */
+namespace belin\i18n;
 
 /**
  * Represents a message source that stores translated messages in JSON files.
- * @class CJsonMessageSource
+ * @class belin.i18n.JsonMessageSource
  * @extends system.i18n.CPhpMessageSource
  * @constructor
  */
-class CJsonMessageSource extends CPhpMessageSource {
+class JsonMessageSource extends \CPhpMessageSource {
 
   /**
    * The string prefixed to every cache key in order to avoid name collisions.
@@ -19,7 +20,7 @@ class CJsonMessageSource extends CPhpMessageSource {
    * @static
    * @final
    */
-  const CACHE_KEY_PREFIX='Yii.CJsonMessageSource.';
+  const CACHE_KEY_PREFIX='belin.i18n.JsonMessageSource:';
 
   /**
    * Determines the message file name based on the given category and language.
@@ -44,18 +45,18 @@ class CJsonMessageSource extends CPhpMessageSource {
   protected function loadMessages($category, $language) {
     $messageFile=$this->getMessageFile($category, $language);
 
-    $cache=($this->cacheID===false ? null : Yii::app()->getComponent($this->cacheID));
+    $cache=($this->cacheID===false ? null : \Yii::app()->getComponent($this->cacheID));
     $cacheKey=static::CACHE_KEY_PREFIX.$messageFile;
     if($cache && $this->cachingDuration>0) {
       $data=$cache->get($cacheKey);
       if($data!==false) return unserialize($data);
     }
 
-    $messages=(is_file($messageFile) ? CJSON::decode(file_get_contents($messageFile)) : []);
+    $messages=(is_file($messageFile) ? \CJSON::decode(file_get_contents($messageFile)) : []);
     if(!is_array($messages)) $messages=[];
 
     if($cache) {
-      $dependency=new CFileCacheDependency($messageFile);
+      $dependency=new \CFileCacheDependency($messageFile);
       $cache->set($cacheKey, serialize($messages), $this->cachingDuration, $dependency);
     }
 
