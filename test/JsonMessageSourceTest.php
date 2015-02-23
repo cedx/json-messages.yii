@@ -1,7 +1,7 @@
 <?php
 /**
  * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
- * @module test.i18n.JsonMessageSourceTest
+ * @module test.JsonMessageSourceTest
  */
 namespace yii\tests\i18n;
 use yii\i18n\JsonMessageSource;

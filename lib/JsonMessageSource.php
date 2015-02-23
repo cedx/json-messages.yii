@@ -1,7 +1,7 @@
 <?php
 /**
  * Implementation of the `yii\i18n\JsonMessageSource` class.
- * @module i18n.JsonMessageSource
+ * @module JsonMessageSource
  */
 namespace yii\i18n;
 
