@@ -52,7 +52,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
    */
   public function testLoadMessagesFromFile() {
     $expected=[ 'Hello World!'=>'Bonjour le monde !' ];
-    $this->assertEquals($expected, $this->model->loadMessagesFromFile($this->model->getMessageFilePath('messages', 'fr')));
+    $this->assertEquals($expected, $this->model->loadMessagesFromFile($this->model->basePath.'/fr/messages.json'));
     $this->assertEquals('Bonjour le monde !', $this->model->translate('messages', 'Hello World!', 'fr'));
   }
 
