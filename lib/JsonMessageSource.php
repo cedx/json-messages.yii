@@ -1,16 +1,16 @@
 <?php
 /**
- * Implementation of the `belin\i18n\JsonMessageSource` class.
+ * Implementation of the `yii\i18n\JsonMessageSource` class.
  * @module i18n.JsonMessageSource
  */
-namespace belin\i18n;
+namespace yii\i18n;
 
+use yii\helpers\FileHelper;
 use yii\helpers\Json;
-use yii\i18n\PhpMessageSource;
 
 /**
  * Represents a message source that stores translated messages in JSON files.
- * @class belin.i18n.JsonMessageSource
+ * @class yii.i18n.JsonMessageSource
  * @extends yii.i18n.PhpMessageSource
  * @constructor
  */
@@ -25,7 +25,8 @@ class JsonMessageSource extends PhpMessageSource {
    * @protected
    */
   protected function getMessageFilePath($category, $language) {
-    return preg_replace('/\.php$/i', '.json', parent::getMessageFilePath($category, $language));
+    $path=preg_replace('/\.php$/i', '.json', parent::getMessageFilePath($category, $language));
+    return FileHelper::normalizePath($path);
   }
 
   /**
@@ -37,7 +38,7 @@ class JsonMessageSource extends PhpMessageSource {
    */
   protected function loadMessagesFromFile($messageFile) {
     if(!is_file($messageFile)) return null;
-    $messages=Json::decode(file_get_contents($messageFile));
+    $messages=Json::decode(@file_get_contents($messageFile));
     return is_array($messages) ? $messages : [];
   }
 }

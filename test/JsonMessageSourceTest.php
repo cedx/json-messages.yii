@@ -1,29 +1,29 @@
 <?php
 /**
- * Implementation of the `belin\test\i18n\JsonMessageSourceTest` class.
+ * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
  * @module test.i18n.JsonMessageSourceTest
  */
-namespace belin\tests\i18n;
-use belin\i18n\JsonMessageSource;
+namespace yii\tests\i18n;
+use yii\i18n\JsonMessageSource;
 
 /**
  * Publicly exposes the features of the `JsonMessageSource` class.
- * @class belin.test.i18n.JsonMessageSourceStub
- * @extends belin.i18n.JsonMessageSource
+ * @class yii.test.i18n.JsonMessageSourceStub
+ * @extends yii.i18n.JsonMessageSource
  * @constructor
  */
 class JsonMessageSourceStub extends JsonMessageSource {
   public function getMessageFilePath($category, $language) {
     return parent::getMessageFilePath($category, $language);
   }
-  public function loadMessagesFromFile($category, $language) {
-    return parent::loadMessagesFromFile($category, $language);
+  public function loadMessagesFromFile($messageFile) {
+    return parent::loadMessagesFromFile($messageFile);
   }
 }
 
 /**
- * Tests the features of the `belin\i18n\JsonMessageSource` class.
- * @class belin.test.i18n.JsonMessageSourceTest
+ * Tests the features of the `yii\i18n\JsonMessageSource` class.
+ * @class yii.test.i18n.JsonMessageSourceTest
  * @extends phpunit.PHPUnit_Framework_TestCase
  * @constructor
  */
@@ -32,7 +32,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   /**
    * The data context of the tests.
    * @property model
-   * @type belin.i18n.JsonMessageSource
+   * @type yii.i18n.JsonMessageSource
    * @private
    */
   private $model;
@@ -52,7 +52,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
    */
   public function testLoadMessagesFromFile() {
     $expected=[ 'Hello World!'=>'Bonjour le monde !' ];
-    $this->assertEquals($expected, $this->model->loadMessagesFromFile('messages', 'fr'));
+    $this->assertEquals($expected, $this->model->loadMessagesFromFile($this->model->getMessageFilePath('messages', 'fr')));
     $this->assertEquals('Bonjour le monde !', $this->model->translate('messages', 'Hello World!', 'fr'));
   }
 

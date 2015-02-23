@@ -1,4 +1,5 @@
 /*.komodoproject
+/bin/
 /composer.lock
 /doc/api/
 /node_modules/

@@ -11,11 +11,10 @@
     "name": "Cédric Belin"
   }],
   "autoload": {
-    "psr-4": { "belin\\": "lib/" }
+    "psr-4": { "yii\\i18n\\": "lib/" }
   },
   "config": {
-    "bin-dir": "bin",
-    "vendor-dir": "vendor"
+    "bin-dir": "bin"
   },
   "keywords": [
     "i18n",
