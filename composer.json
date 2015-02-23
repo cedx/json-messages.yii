@@ -3,7 +3,7 @@
   "homepage": "https://github.com/cedx/json-messages.yii",
   "license": "MIT",
   "minimum-stability": "dev",
-  "name": "cedx/yii-json-messages",
+  "name": "cedx/yii2-json-messages",
   "prefer-stable": true,
   "type": "library",
   "authors": [{
@@ -22,11 +22,12 @@
     "yii"
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "yiisoft/yii2-composer": "^2.0.2"
   },
   "require-dev": {
     "phpunit/phpunit-story": "^1.0.2",
-    "yiisoft/yii": "^1.1.16"
+    "yiisoft/yii2": "^2.0.2"
   },
   "support": {
     "issues": "https://github.com/cedx/json-messages.yii/issues"

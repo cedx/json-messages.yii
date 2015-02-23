@@ -1,5 +1,5 @@
 # JSON-Messages.yii
-[![Release](http://img.shields.io/packagist/v/cedx/yii-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii-json-messages.svg?style=flat)](https://github.com/cedx/json-messages.yii/blob/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii-json-messages) [![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg?style=flat)](https://travis-ci.org/cedx/json-messages.yii)
+[![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii2-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg?style=flat)](https://github.com/cedx/json-messages.yii/blob/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg?style=flat)](https://packagist.org/packages/cedx/yii2-json-messages) [![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg?style=flat)](https://travis-ci.org/cedx/json-messages.yii)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
@@ -21,7 +21,7 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 From a command prompt, run:
 
 ```shell
-$ composer require cedx/yii-json-messages
+$ composer require cedx/yii2-json-messages
 ```
 
 Now in your application configuration file, you can use the following log route:
@@ -29,7 +29,7 @@ Now in your application configuration file, you can use the following log route:
 ```php
 return [
   'aliases' => [
-    'belin' => 'ext.cedx.yii-json-messages.lib',
+    'belin' => 'ext.cedx.yii2-json-messages.lib',
   ],
   'components' => [
     'messages' => [
@@ -44,4 +44,4 @@ Adjust the values as needed. Here, it's supposed that [`CApplication->extensionP
 The `belin` alias must be defined prior to use the view renderer. The library classes rely on this alias to function properly.
 
 ## License
-[JSON-Messages.yii](https://packagist.org/packages/cedx/yii-json-messages) is distributed under the MIT License.
+[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the MIT License.

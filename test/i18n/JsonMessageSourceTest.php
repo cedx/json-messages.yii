@@ -4,7 +4,7 @@
  * @module test.i18n.JsonMessageSourceTest
  */
 namespace belin\tests\i18n;
-use \belin\i18n\JsonMessageSource;
+use belin\i18n\JsonMessageSource;
 
 /**
  * Publicly exposes the features of the `JsonMessageSource` class.
