@@ -29,19 +29,23 @@ Now in your application configuration file, you can use the following log route:
 ```php
 return [
   'aliases' => [
-    'belin' => 'ext.cedx.yii2-json-messages.lib',
+    '@belin/i18n' => '@vendor/cedx/yii2-json-messages/lib/i18n',
   ],
   'components' => [
-    'messages' => [
-      'class' => 'belin\i18n\JsonMessageSource'
+    'i18n' => [
+	  'translations' => [
+		'app*' => [
+          'class' => 'belin\i18n\JsonMessageSource'
+		]
+	  ]
     ]
   ]
 ];
 ```
 
-Adjust the values as needed. Here, it's supposed that [`CApplication->extensionPath`](http://www.yiiframework.com/doc/api/1.1/CApplication#extensionPath-detail), that is the [`ext`](http://www.yiiframework.com/doc/guide/1.1/en/basics.namespace) root alias, has been set to Composer's `vendor` directory.
+Adjust the values as needed. Here, it's supposed that [`CApplication->vendorPath`](http://www.yiiframework.com/doc/api/1.1/CApplication#vendorPath-detail), that is the [`ext`](http://www.yiiframework.com/doc/guide/1.1/en/basics.namespace) root alias, has been set to Composer's `vendor` directory.
 
-The `belin` alias must be defined prior to use the view renderer. The library classes rely on this alias to function properly.
+The `@belin` alias must be defined prior to use the view renderer. The library classes rely on this path alias to function properly.
 
 ## License
 [JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the MIT License.

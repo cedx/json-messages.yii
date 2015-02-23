@@ -13,21 +13,21 @@ use belin\i18n\JsonMessageSource;
  * @constructor
  */
 class JsonMessageSourceStub extends JsonMessageSource {
-  public function getMessageFile($category, $language) {
-    return parent::getMessageFile($category, $language);
+  public function getMessageFilePath($category, $language) {
+    return parent::getMessageFilePath($category, $language);
   }
-  public function loadMessages($category, $language) {
-    return parent::loadMessages($category, $language);
+  public function loadMessagesFromFile($category, $language) {
+    return parent::loadMessagesFromFile($category, $language);
   }
 }
 
 /**
  * Tests the features of the `belin\i18n\JsonMessageSource` class.
  * @class belin.test.i18n.JsonMessageSourceTest
- * @extends system.test.CTestCase
+ * @extends phpunit.PHPUnit_Framework_TestCase
  * @constructor
  */
-class JsonMessageSourceTest extends \CTestCase {
+class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * The data context of the tests.
@@ -38,21 +38,21 @@ class JsonMessageSourceTest extends \CTestCase {
   private $model;
 
   /**
-   * Tests the `getMessageFile` method.
-   * @method testGetMessageFile
+   * Tests the `getMessageFilePath` method.
+   * @method testGetMessageFilePath
    */
   public function testGetMessageFile() {
     $expected=str_replace('/', DIRECTORY_SEPARATOR, $this->model->basePath.'/fr/messages.json');
-    $this->assertEquals($expected, $this->model->getMessageFile('messages', 'fr'));
+    $this->assertEquals($expected, $this->model->getMessageFilePath('messages', 'fr'));
   }
 
   /**
-   * Tests the `loadMessages` method.
+   * Tests the `loadMessagesFromFile` method.
    * @method testLoadMessages
    */
-  public function testLoadMessages() {
+  public function testLoadMessagesFromFile() {
     $expected=[ 'Hello World!'=>'Bonjour le monde !' ];
-    $this->assertEquals($expected, $this->model->loadMessages('messages', 'fr'));
+    $this->assertEquals($expected, $this->model->loadMessagesFromFile('messages', 'fr'));
     $this->assertEquals('Bonjour le monde !', $this->model->translate('messages', 'Hello World!', 'fr'));
   }
 
@@ -64,6 +64,5 @@ class JsonMessageSourceTest extends \CTestCase {
   protected function setUp() {
     $this->model=new JsonMessageSourceStub();
     $this->model->basePath=__DIR__;
-    $this->model->cacheID=false;
   }
 }
