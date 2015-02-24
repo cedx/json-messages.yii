@@ -6,7 +6,7 @@
 namespace yii\tests\i18n;
 
 // Module dependencies.
-use \yii\i18n\JsonMessageSource;
+use yii\i18n\JsonMessageSource;
 
 /**
  * Publicly exposes the features of the `JsonMessageSource` class.
