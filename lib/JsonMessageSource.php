@@ -5,8 +5,9 @@
  */
 namespace yii\i18n;
 
-use yii\helpers\FileHelper;
-use yii\helpers\Json;
+// Module dependencies.
+use \yii\helpers\FileHelper;
+use \yii\helpers\Json;
 
 /**
  * Represents a message source that stores translated messages in JSON files.

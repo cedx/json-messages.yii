@@ -3,7 +3,9 @@
  * Entry point of the unit tests.
  * @module test.index
  */
-use yii\console\Application;
+ 
+// Module dependencies.
+use \yii\console\Application;
 
 // Set the environment.
 define('YII_DEBUG', true);
