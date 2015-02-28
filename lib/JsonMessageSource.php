@@ -31,7 +31,7 @@ class JsonMessageSource extends PhpMessageSource {
   }
 
   /**
-   * Loads the message translation for the specified language and category or returns null if file doesn't exist.
+   * Loads the message translation for the specified language and category.
    * @method loadMessagesFromFile
    * @param {string} $messageFile string The path to message file.
    * @return {array} The message array or `null` if the file is not found.
