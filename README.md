@@ -32,7 +32,7 @@ return [
   'components' => [
     'i18n' => [
 	  'translations' => [
-		'*' => 'yii\\i18n\\JsonMessageSource'
+		'*' => 'yii\i18n\JsonMessageSource'
 	  ]
     ]
   ]
