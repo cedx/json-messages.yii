@@ -1,6 +1,6 @@
 {
   "author": "Cédric Belin <cedric@belin.io>",
-  "bugs": "https://github.com/cedx/json-messages.yii/issues",
+  "bugs": "https://bitbucket.org/cedx/json-messages.yii/issues",
   "description": "JSON message source for Yii Framework.",
   "homepage": "https://packagist.org/packages/cedx/yii2-json-messages",
   "license": "MIT",
@@ -11,10 +11,10 @@
     "del": "^1.1.1",
     "docgen-js": "^0.0.1",
     "gulp": "^3.8.11",
-    "gulp-david": "^0.2.0",
-    "gulp-jshint": "^1.9.2",
-    "gulp-load-plugins": "^0.8.0",
-    "gulp-zip": "^2.0.2"
+    "gulp-david": "^0.2.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-load-plugins": "^0.9.0",
+    "gulp-zip": "^3.0.2"
   },
   "engines": {
     "node": ">=0.12.0"
