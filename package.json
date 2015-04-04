@@ -6,7 +6,7 @@
   "license": "MIT",
   "name": "yii2-json-messages",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "devDependencies": {
     "del": "^1.1.1",
     "docgen-js": "^0.0.1",
