@@ -1,6 +1,6 @@
 {
   "description": "JSON message source for Yii Framework.",
-  "homepage": "https://bitbucket.org/cedx/json-messages.yii",
+  "homepage": "http://dev.belin.io/json-messages.yii",
   "license": "MIT",
   "minimum-stability": "dev",
   "name": "cedx/yii2-json-messages",
@@ -33,6 +33,6 @@
     "phpunit/phpunit": "^4.6.0"
   },
   "support": {
-    "issues": "https://bitbucket.org/cedx/json-messages.yii/issues"
+    "issues": "http://dev.belin.io/json-messages.yii/issues"
   }
 }

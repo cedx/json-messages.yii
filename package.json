@@ -1,6 +1,6 @@
 {
   "author": "Cédric Belin <cedric@belin.io>",
-  "bugs": "https://bitbucket.org/cedx/json-messages.yii/issues",
+  "bugs": "http://dev.belin.io/json-messages.yii/issues",
   "description": "JSON message source for Yii Framework.",
   "homepage": "https://packagist.org/packages/cedx/yii2-json-messages",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "unused": true
   },
   "yuidoc": {
-    "logo": "http://dev.belin.io/json-messages.yii/favicon.ico",
+    "logo": "http://api.belin.io/json-messages.yii/favicon.ico",
     "name": "JSON-Messages.yii",
     "url": "https://packagist.org/packages/cedx/yii2-json-messages",
     "options": {
