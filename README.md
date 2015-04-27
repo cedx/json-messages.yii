@@ -1,5 +1,5 @@
 # JSON-Messages.yii
-[![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg)](http://dev.belin.io/json-messages.yii/src/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) ![Build](https://img.shields.io/codeship/16aefad0-bc20-0132-2beb-7ab97aac1fb6.svg)
+[![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg)](https://bitbucket.org/cedx/json-messages.yii/src/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) ![Build](https://img.shields.io/codeship/16aefad0-bc20-0132-2beb-7ab97aac1fb6.svg)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 

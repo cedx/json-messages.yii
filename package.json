@@ -1,19 +1,19 @@
 {
   "author": "Cédric Belin <cedric@belin.io>",
-  "bugs": "http://dev.belin.io/json-messages.yii/issues",
+  "bugs": "https://bitbucket.org/cedx/json-messages.yii/issues",
   "description": "JSON message source for Yii Framework.",
   "homepage": "https://packagist.org/packages/cedx/yii2-json-messages",
   "license": "MIT",
   "name": "yii2-json-messages",
   "private": true,
-  "version": "0.3.1",
+  "version": "0.3.2",
   "devDependencies": {
     "del": "^1.1.1",
     "docgen-js": "^0.0.1",
     "gulp": "^3.8.11",
-    "gulp-david": "^0.2.1",
+    "gulp-david": "^0.2.2",
     "gulp-jshint": "^1.10.0",
-    "gulp-load-plugins": "^0.9.0",
+    "gulp-load-plugins": "^0.10.0",
     "gulp-zip": "^3.0.2"
   },
   "engines": {
