@@ -6,6 +6,7 @@
   "license": "MIT",
   "name": "yii2-json-messages",
   "private": true,
+  "repository": "bitbucket:cedx/json-messages.yii",
   "version": "0.3.2",
   "devDependencies": {
     "del": "^1.1.1",
@@ -33,10 +34,6 @@
     "trailing": true,
     "undef": true,
     "unused": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/cedx/json-messages.yii.git"
   },
   "yuidoc": {
     "logo": "http://api.belin.io/json-messages.yii/favicon.ico",
