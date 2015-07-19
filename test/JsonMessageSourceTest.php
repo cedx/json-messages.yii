@@ -1,23 +1,33 @@
 <?php
 /**
+ * @file
  * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
- * @module test.JsonMessageSourceTest
  */
 namespace yii\tests\i18n;
 
-// Module dependencies.
+// Dependencies.
 use yii\i18n\JsonMessageSource;
 
 /**
- * Publicly exposes the features of the `JsonMessageSource` class.
- * @class yii.test.i18n.JsonMessageSourceStub
- * @extends yii.i18n.JsonMessageSource
- * @constructor
+ * Publicly exposes the features of the `yii\i18n\JsonMessageSource` class.
  */
 class JsonMessageSourceStub extends JsonMessageSource {
+
+  /**
+   * Returns message file path for the specified language and category.
+   * @param string $category The message category.
+   * @param string $language The target language.
+   * @return string The path to message file.
+   */
   public function getMessageFilePath($category, $language) {
     return parent::getMessageFilePath($category, $language);
   }
+
+  /**
+   * Loads the message translation for the specified language and category.
+   * @param string $messageFile string The path to message file.
+   * @return array The message array or `null` if the file is not found.
+   */
   public function loadMessagesFromFile($messageFile) {
     return parent::loadMessagesFromFile($messageFile);
   }
@@ -25,23 +35,17 @@ class JsonMessageSourceStub extends JsonMessageSource {
 
 /**
  * Tests the features of the `yii\i18n\JsonMessageSource` class.
- * @class yii.test.i18n.JsonMessageSourceTest
- * @extends phpunit.PHPUnit_Framework_TestCase
- * @constructor
  */
 class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
+   * @var yii::tests::i18n::JsonMessageSourceStub $model
    * The data context of the tests.
-   * @property model
-   * @type yii.i18n.JsonMessageSource
-   * @private
    */
   private $model;
 
   /**
    * Tests the `getMessageFilePath` method.
-   * @method testGetMessageFilePath
    */
   public function testGetMessageFile() {
     $expected=str_replace('/', DIRECTORY_SEPARATOR, $this->model->basePath.'/fr/messages.json');
@@ -50,7 +54,6 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * Tests the `loadMessagesFromFile` method.
-   * @method testLoadMessages
    */
   public function testLoadMessagesFromFile() {
     $expected=[ 'Hello World!'=>'Bonjour le monde !' ];
@@ -60,8 +63,6 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
    * Performs a common set of tasks just before each test method is called.
-   * @method setUp
-   * @protected
    */
   protected function setUp() {
     $this->model=new JsonMessageSourceStub();
