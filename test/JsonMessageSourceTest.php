@@ -39,7 +39,7 @@ class JsonMessageSourceStub extends JsonMessageSource {
 class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
-   * @var yii\tests\i18n\JsonMessageSourceStub $model
+   * @var yii::tests::i18n::JsonMessageSourceStub $model
    * The data context of the tests.
    */
   private $model;
