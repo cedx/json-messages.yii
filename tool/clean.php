@@ -6,4 +6,4 @@
  */
 
 chdir(dirname(__DIR__));
-unlink('var/json-messages.yii-0.4.0.zip');
+@unlink('var/json-messages.yii-0.4.0.zip');
