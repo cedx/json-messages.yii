@@ -1,17 +1,17 @@
 <?php
 /**
+ * @file
  * Entry point of the unit tests.
- * @module test.index
  */
 
-// Module dependencies.
+// Dependencies.
 use yii\console\Application;
 
 // Set the environment.
 define('YII_DEBUG', true);
 define('YII_ENV', getenv('YII_ENV') ?: 'test');
 
-// Load the dependencies.
+// Load the class library.
 $rootPath=dirname(__DIR__);
 require_once $rootPath.'/vendor/autoload.php';
 require_once $rootPath.'/vendor/yiisoft/yii2/Yii.php';

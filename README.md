@@ -1,6 +1,4 @@
 # JSON-Messages.yii
-[![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) [![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg)](https://bitbucket.org/cedx/json-messages.yii/src/master/LICENSE.txt) [![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg)](https://packagist.org/packages/cedx/yii2-json-messages) ![Build](https://img.shields.io/codeship/16aefad0-bc20-0132-2beb-7ab97aac1fb6.svg)
-
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
 This package provides a single class, `yii\i18n\JsonMessageSource` which is a message source that stores translated messages in JSON files.
@@ -31,9 +29,9 @@ Now in your application configuration file, you can use the following message so
 return [
   'components' => [
     'i18n' => [
-	  'translations' => [
-		'*' => 'yii\i18n\JsonMessageSource'
-	  ]
+      'translations' => [
+        '*' => 'yii\i18n\JsonMessageSource'
+      ]
     ]
   ]
 ];
