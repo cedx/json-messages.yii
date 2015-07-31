@@ -1,4 +1,5 @@
-/*.komodoproject
+/.idea/
+/*.iml
 /bin/
 /composer.lock
 /doc/api/

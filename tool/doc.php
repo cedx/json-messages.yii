@@ -7,7 +7,7 @@
 
 chdir(dirname(__DIR__));
 
-shell_exec(sprintf(
+echo shell_exec(sprintf(
   '%s %s',
   PHP_OS=='WINNT' ? '"C:\Program Files\Doxygen\bin\doxygen.exe"' : 'doxygen',
   'doc'.DIRECTORY_SEPARATOR.'api.doxyfile'
