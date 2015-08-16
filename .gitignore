@@ -1,8 +1,7 @@
-/*.komodoproject
+/*.iml
+/.idea/
 /bin/
 /composer.lock
 /doc/api/
-/node_modules/
-/npm-debug.log
 /var/
 /vendor/
