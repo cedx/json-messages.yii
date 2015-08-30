@@ -13,8 +13,18 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 }
 ```
 
+## Requirements
+The latest [PHP](http://php.net) and [Composer](https://getcomposer.org) versions.
+If you plan to play with the sources, you will also need the latest versions of the following products:
+
+- [Doxygen](http://www.doxygen.org)
+- [Phing](https://www.phing.info)
+- [PHP Mess Detector](http://phpmd.org)
+- [PHPUnit](https://phpunit.de)
+
 ## Documentation
 - [API Reference](http://api.belin.io/json-messages.yii)
+- [Code Analysis](http://src.belin.io/dashboard/index/json-messages.yii)
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:

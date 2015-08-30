@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project default="dist" name="json-messages.yii">
-  <property name="version" value="0.4.1"/>
+  <property name="version" value="0.4.2"/>
 
   <target name="clean" description="Deletes all generated files and reset any saved state.">
     <delete>
@@ -11,17 +11,33 @@
   <target name="dist" depends="clean" description="Creates a distribution file for this program.">
     <zip destfile="var/${phing.project.name}-${version}.zip">
       <fileset dir="." includes="*.json,*.md,*.txt"/>
-      <fileset dir="." includes="lib/*.php"/>
+      <fileset dir="." includes="lib/**/*.php"/>
     </zip>
   </target>
 
   <target name="doc" description="Builds the documentation.">
     <delete dir="doc/api" quiet="true"/>
 
-    <exec executable="doxygen">
+    <exec executable="doxygen" passthru="true">
       <arg file="doc/api.doxyfile"/>
     </exec>
 
     <copy file="web/favicon.ico" todir="doc/api"/>
+  </target>
+
+  <target name="lint" description="Performs static analysis of source code.">
+    <phpmd pharlocation="/usr/share/php/phpmd.phar" rulesets="cleancode,codesize,controversial,design,naming,unusedcode">
+      <fileset dir="." includes="lib/**/*.php"/>
+      <formatter type="text" usefile="false"/>
+    </phpmd>
+  </target>
+
+  <target name="test" description="Runs the unit tests.">
+    <phpunit configuration="phpunit.xml" pharlocation="/usr/share/php/phpunit.phar">
+      <batchtest>
+        <fileset dir="." includes="test/**/*.php"/>
+      </batchtest>
+      <formatter type="plain" usefile="false"/>
+    </phpunit>
   </target>
 </project>

@@ -1,5 +1,6 @@
 /*.iml
 /.idea/
+/.sonar/
 /bin/
 /composer.lock
 /doc/api/
