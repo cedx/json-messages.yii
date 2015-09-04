@@ -48,4 +48,4 @@ return [
 ```
 
 ## License
-[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the MIT License.
+[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.
