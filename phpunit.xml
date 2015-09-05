@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <phpunit bootstrap="test/index.php">
+  <logging>
+    <log type="coverage-clover" target="var/phpunit.coverage.xml"/>
+    <log type="junit" target="var/phpunit.tests.xml"/>
+  </logging>
+
   <testsuites>
     <testsuite name="all">
       <directory>test</directory>

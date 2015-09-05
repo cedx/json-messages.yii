@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <project default="dist" name="json-messages.yii">
-  <property name="version" value="0.4.2"/>
+  <property name="version" value="0.4.3"/>
 
   <target name="clean" description="Deletes all generated files and reset any saved state.">
     <delete>
-      <fileset dir="var" includes="*.zip"/>
+      <fileset dir="var" includes="*.xml,*.zip"/>
     </delete>
   </target>
 
@@ -33,11 +33,6 @@
   </target>
 
   <target name="test" description="Runs the unit tests.">
-    <phpunit configuration="phpunit.xml" pharlocation="/usr/share/php/phpunit.phar">
-      <batchtest>
-        <fileset dir="." includes="test/**/*Test.php"/>
-      </batchtest>
-      <formatter type="plain" usefile="false"/>
-    </phpunit>
+    <exec executable="phpunit" passthru="true"/>
   </target>
 </project>
