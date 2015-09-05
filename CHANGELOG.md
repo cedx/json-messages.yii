@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) library.
 
+#### Version 0.4.3
+- Added code coverage.
+- Changed licensing for the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
 #### Version 0.4.2
 - Added a lint task based on [PHP Mess Detector](http://phpmd.org) code analyzer.
 - Added a test task based on [PHPUnit](https://phpunit.de) testing framework.
