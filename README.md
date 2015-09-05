@@ -24,7 +24,7 @@ If you plan to play with the sources, you will also need the latest versions of 
 
 ## Documentation
 - [API Reference](http://api.belin.io/json-messages.yii)
-- [Code Analysis](http://src.belin.io/dashboard/index/json-messages.yii)
+- [Code Analysis](http://sonarqube.belin.io/dashboard/index/json-messages.yii)
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
@@ -48,4 +48,4 @@ return [
 ```
 
 ## License
-[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the MIT License.
+[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.
