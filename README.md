@@ -1,4 +1,6 @@
 # JSON-Messages.yii
+![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg)
+
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
 This package provides a single class, `yii\i18n\JsonMessageSource` which is a message source that stores translated messages in JSON files.
@@ -24,7 +26,7 @@ If you plan to play with the sources, you will also need the latest versions of 
 
 ## Documentation
 - [API Reference](http://api.belin.io/json-messages.yii)
-- [Code Analysis](http://sonarqube.belin.io/dashboard/index/json-messages.yii)
+- [Code Analysis](http://src.belin.io/dashboard/index/json-messages.yii)
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
