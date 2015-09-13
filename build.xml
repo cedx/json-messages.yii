@@ -11,7 +11,7 @@
   <target name="dist" depends="clean" description="Creates a distribution file for this program.">
     <zip destfile="var/${phing.project.name}-${version}.zip">
       <fileset dir="." includes="*.json,*.md,*.txt"/>
-      <fileset dir="." includes="lib/**/*.php"/>
+      <fileset dir="." includes="lib/**.php"/>
     </zip>
   </target>
 
@@ -27,8 +27,8 @@
 
   <target name="lint" description="Performs static analysis of source code.">
     <phpmd pharlocation="/usr/share/php/phpmd.phar" rulesets="codesize,controversial,design,naming,unusedcode">
-      <fileset dir="." includes="lib/**/*.php"/>
-      <fileset dir="." includes="test/**/*.php"/>
+      <fileset dir="." includes="lib/**.php"/>
+      <fileset dir="." includes="test/**.php"/>
       <formatter type="text" usefile="false"/>
     </phpmd>
   </target>
