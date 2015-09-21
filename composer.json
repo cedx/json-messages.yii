@@ -15,7 +15,7 @@
   },
   "config": {
     "bin-dir": "bin",
-    "optimize-autoloader": "true"
+    "optimize-autoloader": true
   },
   "keywords": [
     "i18n",
