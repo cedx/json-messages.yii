@@ -14,7 +14,8 @@
     "psr-4": { "yii\\i18n\\": "lib/" }
   },
   "config": {
-    "bin-dir": "bin"
+    "bin-dir": "bin",
+    "optimize-autoloader": "true"
   },
   "keywords": [
     "i18n",
