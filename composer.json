@@ -15,7 +15,8 @@
   },
   "config": {
     "bin-dir": "bin",
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "platform": { "php": "5.6" }
   },
   "keywords": [
     "i18n",
@@ -31,7 +32,7 @@
     "yiisoft/yii2": "^2.0.6"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.8.6"
+    "phpunit/phpunit": "^5.0.9"
   },
   "support": {
     "issues": "https://github.com/cedx/json-messages.yii/issues"

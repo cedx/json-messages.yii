@@ -25,7 +25,7 @@ If you plan to play with the sources, you will also need the latest versions of 
 - [PHPUnit](https://phpunit.de)
 
 ## Documentation
-- [API Reference](http://api.belin.io/json-messages.yii)
+- [API Reference](http://www.belin.io/json-messages.yii/api)
 - [Code Analysis](http://src.belin.io/dashboard/index/json-messages.yii)
 
 ## Installing via [Composer](https://getcomposer.org)
@@ -50,4 +50,4 @@ return [
 ```
 
 ## License
-[JSON-Messages.yii](https://packagist.org/packages/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.
+[JSON-Messages.yii](https://github.com/cedx/json-messages.yii) is distributed under the Apache License, version 2.0.
