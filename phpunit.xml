@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <phpunit bootstrap="test/index.php">
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">lib</directory>
+    </whitelist>
+  </filter>
+
   <logging>
     <log type="coverage-clover" target="var/phpunit.coverage.xml"/>
     <log type="junit" target="var/phpunit.tests.xml"/>
