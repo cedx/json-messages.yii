@@ -21,7 +21,7 @@ class JsonMessageSource extends PhpMessageSource {
    * @return string The path to message file.
    */
   protected function getMessageFilePath($category, $language) {
-    $path=preg_replace('/\.php$/i', '.json', parent::getMessageFilePath($category, $language));
+    $path = preg_replace('/\.php$/i', '.json', parent::getMessageFilePath($category, $language));
     return FileHelper::normalizePath($path);
   }
 
@@ -32,7 +32,7 @@ class JsonMessageSource extends PhpMessageSource {
    */
   protected function loadMessagesFromFile($messageFile) {
     if(!is_file($messageFile)) return null;
-    $messages=Json::decode(@file_get_contents($messageFile));
+    $messages = Json::decode(@file_get_contents($messageFile));
     return is_array($messages) ? $messages : [];
   }
 }
