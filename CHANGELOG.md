@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON-Messages.yii](https://github.com/cedx/json-messages.yii) library.
 
+#### Version 0.5.0
+- Breaking change: using [PHP 7](http://php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
+
 #### Version 0.4.3
 - Added code coverage.
 - Changed licensing for the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).

@@ -15,20 +15,20 @@ class JsonMessageSourceStub extends JsonMessageSource {
 
   /**
    * Returns message file path for the specified language and category.
-   * @param string $category The message category.
-   * @param string $language The target language.
-   * @return string The path to message file.
+   * @param $category The message category.
+   * @param $language The target language.
+   * @return The path to message file.
    */
-  public function getMessageFilePath($category, $language) {
+  public function getMessageFilePath($category, $language): string {
     return parent::getMessageFilePath($category, $language);
   }
 
   /**
    * Loads the message translation for the specified language and category.
-   * @param string $messageFile string The path to message file.
-   * @return array The message array or `null` if the file is not found.
+   * @param $messageFile string The path to message file.
+   * @return The message array or `null` if the file is not found.
    */
-  public function loadMessagesFromFile($messageFile) {
+  public function loadMessagesFromFile($messageFile): array {
     return parent::loadMessagesFromFile($messageFile);
   }
 }
