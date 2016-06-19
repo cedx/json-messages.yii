@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project default="dist" name="json-messages.yii">
+<project default="dist" name="yii2-json-messages">
   <property name="version" value="0.5.1"/>
 
   <target name="clean" description="Deletes all generated files and reset any saved state.">
@@ -8,10 +8,17 @@
     </delete>
   </target>
 
+  <target name="coverage" depends="test" description="Sends the results of the code coverage.">
+    <exec executable="vendor/bin/codacycoverage" passthru="true">
+      <arg value="clover"/>
+      <arg value="var/coverage.xml"/>
+    </exec>
+  </target>
+
   <target name="dist" depends="clean" description="Creates a distribution file for this program.">
     <zip destfile="var/${phing.project.name}-${version}.zip">
       <fileset dir="." includes="*.json,*.md,*.txt"/>
-      <fileset dir="." includes="lib/**.php"/>
+      <fileset dir="." includes="lib/**/*.php"/>
     </zip>
   </target>
 

@@ -1,5 +1,5 @@
-# JSON-Messages.yii
-![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Build](http://img.shields.io/travis/cedx/json-messages.yii.svg)
+# JSON Messages for Yii
+![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Code quality](https://img.shields.io/codacy/grade/dcadb4f053ca41e0bfae8670fb898018.svg) ![Build](http://img.shields.io/travis/cedx/yii2-json-messages.svg)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
@@ -21,8 +21,6 @@ If you plan to play with the sources, you will also need the latest versions of 
 
 - [Doxygen](http://www.doxygen.org)
 - [Phing](https://www.phing.info)
-- [PHP Mess Detector](http://phpmd.org)
-- [PHPUnit](https://phpunit.de)
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
@@ -46,9 +44,9 @@ return [
 ```
 
 ## See Also
-- [API Reference](http://www.belin.io/json-messages.yii/api)
-- [Code Analysis](http://src.belin.io/dashboard/index/json-messages.yii)
-- [Continuous Integration](https://travis-ci.org/cedx/json-messages.yii)
+- [API Reference](http://dev.belin.io/yii2-json-messages)
+- [Code Quality](https://www.codacy.com/app/cedx/yii2-json-messages)
+- [Continuous Integration](https://travis-ci.org/cedx/yii2-json-messages)
 
 ## License
-[JSON-Messages.yii](https://github.com/cedx/json-messages.yii) is distributed under the Apache License, version 2.0.
+[JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.

@@ -1,11 +1,13 @@
 {
-  "description": "JSON message source for Yii Framework.",
-  "homepage": "https://github.com/cedx/json-messages.yii",
+  "description": "JSON message source for the Yii Framework.",
+  "homepage": "https://github.com/cedx/yii2-json-messages",
+  "name": "cedx/yii2-json-messages",
+
   "license": "Apache-2.0",
   "minimum-stability": "dev",
-  "name": "cedx/yii2-json-messages",
   "prefer-stable": true,
   "type": "library",
+
   "authors": [{
     "email": "cedric@belin.io",
     "name": "Cédric Belin"
@@ -30,10 +32,11 @@
     "yiisoft/yii2": "^2.0.8"
   },
   "require-dev": {
+    "codacy/coverage": "^1.0.4",
     "phpmd/phpmd": "^2.4.3",
-    "phpunit/phpunit": "^5.3.2"
+    "phpunit/phpunit": "^5.4.6"
   },
   "support": {
-    "issues": "https://github.com/cedx/json-messages.yii/issues"
+    "issues": "https://github.com/cedx/yii2-json-messages/issues"
   }
 }
