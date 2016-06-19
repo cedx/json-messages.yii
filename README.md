@@ -1,5 +1,5 @@
 # JSON Messages for Yii
-![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Code quality](https://img.shields.io/codacy/grade/dcadb4f053ca41e0bfae8670fb898018.svg) ![Build](http://img.shields.io/travis/cedx/yii2-json-messages.svg)
+![Release](http://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](http://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](http://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Code quality](https://img.shields.io/codacy/grade/e631d88b086e4f5d99c89273b779512f.svg) ![Build](http://img.shields.io/travis/cedx/yii2-json-messages.svg)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
 
