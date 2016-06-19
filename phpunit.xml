@@ -8,7 +8,6 @@
 
   <logging>
     <log type="coverage-clover" target="var/phpunit.coverage.xml"/>
-    <log type="junit" target="var/phpunit.tests.xml"/>
   </logging>
 
   <testsuites>
