@@ -1,11 +1,10 @@
 <?php
 /**
- * @file
  * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
  */
 namespace yii\tests\i18n;
 
-// Dependencies.
+// Module dependencies.
 use yii\i18n\JsonMessageSource;
 
 /**
@@ -15,9 +14,9 @@ class JsonMessageSourceStub extends JsonMessageSource {
 
   /**
    * Returns message file path for the specified language and category.
-   * @param $category The message category.
-   * @param $language The target language.
-   * @return The path to message file.
+   * @param string $category The message category.
+   * @param string $language The target language.
+   * @return string The path to message file.
    */
   public function getMessageFilePath($category, $language): string {
     return parent::getMessageFilePath($category, $language);
@@ -25,8 +24,8 @@ class JsonMessageSourceStub extends JsonMessageSource {
 
   /**
    * Loads the message translation for the specified language and category.
-   * @param $messageFile string The path to message file.
-   * @return The message array or `null` if the file is not found.
+   * @param string $messageFile string The path to message file.
+   * @return string[] The message array or `null` if the file is not found.
    */
   public function loadMessagesFromFile($messageFile): array {
     return parent::loadMessagesFromFile($messageFile);
@@ -39,8 +38,7 @@ class JsonMessageSourceStub extends JsonMessageSource {
 class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
 
   /**
-   * @var yii::tests::i18n::JsonMessageSourceStub $model
-   * The data context of the tests.
+   * @var JsonMessageSourceStub The data context of the tests.
    */
   private $model;
 

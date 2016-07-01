@@ -1,10 +1,9 @@
 <?php
 /**
- * @file
  * Entry point of the unit tests.
  */
 
-// Dependencies.
+// Module dependencies.
 use yii\console\Application;
 
 // Set the environment.

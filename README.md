@@ -17,10 +17,7 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 
 ## Requirements
 The latest [PHP](http://php.net) and [Composer](https://getcomposer.org) versions.
-If you plan to play with the sources, you will also need the latest versions of the following products:
-
-- [Doxygen](http://www.doxygen.org)
-- [Phing](https://www.phing.info)
+If you plan to play with the sources, you will also need the [Phing](https://www.phing.info) latest version.
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
@@ -44,7 +41,6 @@ return [
 ```
 
 ## See Also
-- [API Reference](http://dev.belin.io/yii2-json-messages)
 - [Code Quality](https://www.codacy.com/app/cedx/yii2-json-messages)
 - [Continuous Integration](https://travis-ci.org/cedx/yii2-json-messages)
 
