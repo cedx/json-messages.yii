@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+#### Version 1.0.0
+- First stable release.
+- Upgraded the package dependencies.
+
 #### Version 0.5.2
 - Replaced [Doxygen](http://www.doxygen.org) documentation generator by [phpDocumentor](https://www.phpdoc.org).
 
