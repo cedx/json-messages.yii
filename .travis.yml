@@ -1,14 +1,13 @@
+php: '7.0'
 language: php
-sudo: false
 
 env: YII_ENV="test"
-php: '7.0'
+sudo: false
 
 install:
-- composer self-update
 - composer config --global github-oauth.github.com $GITHUB_ACCESS_TOKEN
 - composer global require "fxp/composer-asset-plugin"
 - composer install --no-interaction
 
-script: ./vendor/bin/phpunit
-after_script: ./vendor/bin/codacycoverage clover var/coverage.xml
+script: vendor/bin/phpunit
+after_script: vendor/bin/codacycoverage clover var/coverage.xml
