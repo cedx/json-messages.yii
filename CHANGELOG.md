@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://packagist.org/packages/cedx/yii2-json-messages) library.
 
+#### Version 1.0.1
+- Code optimization.
+- Updated the package dependencies.
+
 #### Version 1.0.0
 - First stable release.
 - Upgraded the package dependencies.

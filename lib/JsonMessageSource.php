@@ -24,10 +24,10 @@ class JsonMessageSource extends PhpMessageSource {
   /**
    * Loads the message translation for the specified language and category.
    * @param string $messageFile string The path to message file.
-   * @return string[] The message array or `null` if the file is not found.
+   * @return string[] The message array, or an empty array if the file is not found or invalid.
    */
   protected function loadMessagesFromFile($messageFile): array {
-    if(!is_file($messageFile)) return null;
+    if(!is_file($messageFile)) return [];
     $messages = Json::decode(@file_get_contents($messageFile));
     return is_array($messages) ? $messages : [];
   }
