@@ -27,7 +27,7 @@ class JsonMessageSource extends PhpMessageSource {
    * @return string[] The message array, or an empty array if the file is not found or invalid.
    */
   protected function loadMessagesFromFile($messageFile): array {
-    if(!is_file($messageFile)) return [];
+    if (!is_file($messageFile)) return [];
     $messages = Json::decode(@file_get_contents($messageFile));
     return is_array($messages) ? $messages : [];
   }
