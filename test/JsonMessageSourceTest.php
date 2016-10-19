@@ -2,7 +2,7 @@
 /**
  * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
  */
-namespace yii\tests\i18n;
+namespace yii\test\i18n;
 use yii\i18n\{JsonMessageSource};
 
 /**
