@@ -1,5 +1,5 @@
 # Changelog
-This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://packagist.org/packages/cedx/yii2-json-messages) library.
+This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
 ## Version 1.0.1
 - Code optimization.
