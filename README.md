@@ -26,7 +26,8 @@ From a command prompt, run:
 $ composer require cedx/yii2-json-messages
 ```
 
-Now in your application configuration file, you can use the following message source:
+## Usage
+In your application configuration file, you can use the following message source:
 
 ```php
 return [
