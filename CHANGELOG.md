@@ -22,7 +22,7 @@ This file contains highlights of what changes on each version of the [JSON Messa
 - Upgraded the package dependencies.
 
 ## Version 0.5.0
-- Breaking change: using [PHP 7](http://php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
+- Breaking change: using [PHP 7](https://secure.php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
 
 ## Version 0.4.3
 - Added code coverage.
@@ -52,8 +52,8 @@ This file contains highlights of what changes on each version of the [JSON Messa
 - Breaking change: ported the library API to [Yii](http://www.yiiframework.com) version 2.
 
 ## Version 0.2.0
-- Breaking change: ported the library API to [namespaces](http://php.net/manual/en/language.namespaces.php).
-- Lowered the required [PHP](http://php.net) version.
+- Breaking change: ported the library API to [namespaces](https://secure.php.net/manual/en/language.namespaces.php).
+- Lowered the required [PHP](https://secure.php.net) version.
 
 ## Version 0.1.1
 - Using [Gulp.js](http://gulpjs.com) as build system.
