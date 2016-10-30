@@ -1,7 +1,7 @@
 # JSON Messages for Yii
 ![Release](https://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](https://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Code quality](https://img.shields.io/codacy/grade/e631d88b086e4f5d99c89273b779512f.svg) ![Build](https://img.shields.io/travis/cedx/yii2-json-messages.svg)
 
-[JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://php.net) framework.
+[JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://secure.php.net) framework.
 
 This package provides a single class, `yii\i18n\JsonMessageSource` which is a message source that stores translated messages in JSON files.
 It extends from [`PhpMessageSource`](http://www.yiiframework.com/doc-2.0/yii-i18n-phpmessagesource.html) class, so its usage is basically the same.
