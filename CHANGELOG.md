@@ -1,13 +1,16 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+## Version 1.0.2
+- Updated the package dependencies.
+
 ## Version 1.0.1
 - Code optimization.
 - Updated the package dependencies.
 
 ## Version 1.0.0
 - First stable release.
-- Upgraded the package dependencies.
+- Updated the package dependencies.
 
 ## Version 0.5.2
 - Replaced [Doxygen](http://www.doxygen.org) documentation generator by [phpDocumentor](https://www.phpdoc.org).
@@ -15,11 +18,11 @@ This file contains highlights of what changes on each version of the [JSON Messa
 ## Version 0.5.1
 - Replaced [SonarQube](http://www.sonarqube.org) code analyzer by [Codacy](https://www.codacy.com) service.
 - Renamed the project according to its [Composer](https://getcomposer.org) package name.
-- Upgraded the package dependencies.
+- Updated the package dependencies.
 
 ## Version 0.5.1
 - Removed dependency on external [PHP Mess Detector](https://phpmd.org) and [PHPUnit](https://phpunit.de) interfaces.
-- Upgraded the package dependencies.
+- Updated the package dependencies.
 
 ## Version 0.5.0
 - Breaking change: using [PHP 7](https://secure.php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
@@ -27,7 +30,7 @@ This file contains highlights of what changes on each version of the [JSON Messa
 ## Version 0.4.3
 - Added code coverage.
 - Changed licensing for the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-- Upgraded the development dependencies.
+- Updated the development dependencies.
 
 ## Version 0.4.2
 - Added a lint task based on [PHP Mess Detector](http://phpmd.org) code analyzer.
@@ -43,10 +46,10 @@ This file contains highlights of what changes on each version of the [JSON Messa
 - Replaced the documentation system by [Doxygen](http://www.doxygen.org).
 
 ## Version 0.3.2
-- Upgraded the development dependencies.
+- Updated the development dependencies.
 
 ## Version 0.3.1
-- Upgraded the development dependencies.
+- Updated the development dependencies.
 
 ## Version 0.3.0
 - Breaking change: ported the library API to [Yii](http://www.yiiframework.com) version 2.
