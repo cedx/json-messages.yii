@@ -41,7 +41,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   private $model;
 
   /**
-   * Tests the `getMessageFilePath` method.
+   * Tests the `JsonMessageSource::getMessageFilePath()` method.
    */
   public function testGetMessageFile() {
     $expected = str_replace('/', DIRECTORY_SEPARATOR, $this->model->basePath . '/fr/messages.json');
@@ -49,7 +49,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `loadMessagesFromFile` method.
+   * Tests the `JsonMessageSource::loadMessagesFromFile()` method.
    */
   public function testLoadMessagesFromFile() {
     $expected = [ 'Hello World!' => 'Bonjour le monde !' ];
