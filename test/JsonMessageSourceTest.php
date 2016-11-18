@@ -41,6 +41,19 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
+   * Tests the `FreeMobileTarget::toJSON` method.
+   */
+  public function testToJSON() {
+    $data = $this->model->toJSON();
+
+    $this->assertObjectHasAttribute('basePath', $data);
+    $this->assertEquals(__DIR__, $data->basePath);
+
+    $this->assertObjectHasAttribute('forceTranslation', $data);
+    $this->assertFalse($data->forceTranslation);
+  }
+
+  /**
    * Performs a common set of tasks just before each test method is called.
    */
   protected function setUp() {

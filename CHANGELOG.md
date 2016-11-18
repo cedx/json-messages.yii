@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+## Version 1.1.0
+- Added the `jsonSerialize()` and `toJSON()` methods.
+
 ## Version 1.0.2
 - Updated the package dependencies.
 
