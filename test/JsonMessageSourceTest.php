@@ -28,6 +28,19 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
+   * Tests the `FreeMobileTarget::jsonSerialize` method.
+   */
+  public function testJsonSerialize() {
+    $data = $this->model->jsonSerialize();
+
+    $this->assertObjectHasAttribute('basePath', $data);
+    $this->assertEquals(__DIR__, $data->basePath);
+
+    $this->assertObjectHasAttribute('forceTranslation', $data);
+    $this->assertFalse($data->forceTranslation);
+  }
+
+  /**
    * Tests the `JsonMessageSource::loadMessagesFromFile()` method.
    */
   public function testLoadMessagesFromFile() {
@@ -38,19 +51,6 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
     $expected = [ 'Hello World!' => 'Bonjour le monde !' ];
     $this->assertEquals($expected, $loadMessagesFromFile->call($this->model, "{$this->model->basePath}/fr/messages.json"));
     $this->assertEquals('Bonjour le monde !', $this->model->translate('messages', 'Hello World!', 'fr'));
-  }
-
-  /**
-   * Tests the `FreeMobileTarget::toJSON` method.
-   */
-  public function testToJSON() {
-    $data = $this->model->toJSON();
-
-    $this->assertObjectHasAttribute('basePath', $data);
-    $this->assertEquals(__DIR__, $data->basePath);
-
-    $this->assertObjectHasAttribute('forceTranslation', $data);
-    $this->assertFalse($data->forceTranslation);
   }
 
   /**

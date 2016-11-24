@@ -11,33 +11,25 @@ use yii\helpers\{FileHelper, Json};
 class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
 
   /**
-   * Converts this object to a map in JSON format.
-   * @return \stdClass The map in JSON format corresponding to this object.
-   */
-  final public function jsonSerialize(): \stdClass {
-    return $this->toJSON();
-  }
-
-  /**
-   * Converts this object to a map in JSON format.
-   * @return \stdClass The map in JSON format corresponding to this object.
-   */
-  public function toJSON(): \stdClass {
-    return (object) [
-      'basePath' => $this->basePath,
-      'fileMap' => $this->fileMap,
-      'forceTranslation' => $this->forceTranslation,
-      'sourceLanguage' => $this->sourceLanguage
-    ];
-  }
-
-  /**
    * Returns a string representation of this object.
    * @return string The string representation of this object.
    */
   public function __toString(): string {
     $json = json_encode($this, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     return static::class." {$json}";
+  }
+
+  /**
+   * Converts this object to a map in JSON format.
+   * @return \stdClass The map in JSON format corresponding to this object.
+   */
+  public function jsonSerialize(): \stdClass {
+    return (object) [
+      'basePath' => $this->basePath,
+      'fileMap' => $this->fileMap,
+      'forceTranslation' => $this->forceTranslation,
+      'sourceLanguage' => $this->sourceLanguage
+    ];
   }
 
   /**
