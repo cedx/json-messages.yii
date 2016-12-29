@@ -1,5 +1,5 @@
 # JSON Messages for Yii
-![Release](https://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](https://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Code quality](https://img.shields.io/codacy/grade/e631d88b086e4f5d99c89273b779512f.svg) ![Build](https://img.shields.io/travis/cedx/yii2-json-messages.svg)
+![Release](https://img.shields.io/packagist/v/cedx/yii2-json-messages.svg) ![License](https://img.shields.io/packagist/l/cedx/yii2-json-messages.svg) ![Downloads](https://img.shields.io/packagist/dt/cedx/yii2-json-messages.svg) ![Coverage](https://coveralls.io/repos/github/cedx/yii2-json-messages/badge.svg) ![Build](https://travis-ci.org/cedx/yii2-json-messages.svg)
 
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://secure.php.net) framework.
 
@@ -17,7 +17,7 @@ Within a JSON file, an object literal of (source, translation) pairs is defined.
 
 ## Requirements
 The latest [PHP](https://secure.php.net) and [Composer](https://getcomposer.org) versions.
-If you plan to play with the sources, you will also need the [Phing](https://www.phing.info) latest version.
+If you plan to play with the sources, you will also need the latest [Phing](https://www.phing.info) version.
 
 ## Installing via [Composer](https://getcomposer.org)
 From a command prompt, run:
@@ -41,9 +41,9 @@ return [
 ];
 ```
 
-## See Also
-- [Code Quality](https://www.codacy.com/app/cedx/yii2-json-messages)
-- [Continuous Integration](https://travis-ci.org/cedx/yii2-json-messages)
+## See also
+- [Code coverage](https://coveralls.io/github/cedx/yii2-json-messages)
+- [Continuous integration](https://travis-ci.org/cedx/yii2-json-messages)
 
 ## License
 [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.
