@@ -3,12 +3,15 @@
  * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
  */
 namespace yii\test\i18n;
+
+use PHPUnit\Framework\{TestCase};
+use yii\helpers\{FileHelper};
 use yii\i18n\{JsonMessageSource};
 
 /**
- * Tests the features of the `yii\i18n\JsonMessageSource` class.
+ * @coversDefaultClass \yii\i18n\JsonMessageSource
  */
-class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
+class JsonMessageSourceTest extends TestCase {
 
   /**
    * @var JsonMessageSource The data context of the tests.
@@ -16,7 +19,7 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   private $model;
 
   /**
-   * Tests the `JsonMessageSource::getMessageFilePath()` method.
+   * @test ::getMessageFilePath
    */
   public function testGetMessageFile() {
     $getMessageFilePath = function($category, $language) {
@@ -28,20 +31,20 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests the `FreeMobileTarget::jsonSerialize` method.
+   * @test ::jsonSerialize
    */
   public function testJsonSerialize() {
     $data = $this->model->jsonSerialize();
 
     $this->assertObjectHasAttribute('basePath', $data);
-    $this->assertEquals(__DIR__, $data->basePath);
+    $this->assertEquals(__DIR__.'/fixtures', $data->basePath);
 
     $this->assertObjectHasAttribute('forceTranslation', $data);
     $this->assertFalse($data->forceTranslation);
   }
 
   /**
-   * Tests the `JsonMessageSource::loadMessagesFromFile()` method.
+   * @test ::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile() {
     $loadMessagesFromFile = function($messageFile) {
@@ -54,10 +57,19 @@ class JsonMessageSourceTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
+   * @test ::__toString
+   */
+  public function testToString() {
+    $model = (string) $this->model;
+    $this->assertStringStartsWith('yii\i18n\JsonMessageSource {', $model);
+    $this->assertContains(sprintf('"basePath":"%s"', str_replace('\\', '\\\\', __DIR__.'/fixtures')), $model);
+    $this->assertContains('"forceTranslation":false', $model);
+  }
+
+  /**
    * Performs a common set of tasks just before each test method is called.
    */
   protected function setUp() {
-    $this->model = new JsonMessageSource();
-    $this->model->basePath = __DIR__;
+    $this->model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
   }
 }
