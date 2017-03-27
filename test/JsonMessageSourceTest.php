@@ -1,75 +1,71 @@
 <?php
-/**
- * Implementation of the `yii\test\i18n\JsonMessageSourceTest` class.
- */
-namespace yii\test\i18n;
-
+namespace yii\i18n;
 use PHPUnit\Framework\{TestCase};
-use yii\helpers\{FileHelper};
-use yii\i18n\{JsonMessageSource};
 
 /**
- * @coversDefaultClass \yii\i18n\JsonMessageSource
+ * Tests the features of the `yii\i18n\JsonMessageSource` class.
  */
 class JsonMessageSourceTest extends TestCase {
 
   /**
-   * @var JsonMessageSource The data context of the tests.
-   */
-  private $model;
-
-  /**
-   * @test ::getMessageFilePath
+   * @test JsonMessageSource::getMessageFilePath
    */
   public function testGetMessageFile() {
     $getMessageFilePath = function($category, $language) {
       return $this->getMessageFilePath($category, $language);
     };
 
-    $expected = str_replace('/', DIRECTORY_SEPARATOR, "{$this->model->basePath}/fr/messages.json");
-    $this->assertEquals($expected, $getMessageFilePath->call($this->model, 'messages', 'fr'));
+    it('should...', function() {
+
+    });
+
+    $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+    expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal(str_replace('/', DIRECTORY_SEPARATOR, "{$model->basePath}/fr/messages.json"));
   }
 
   /**
-   * @test ::jsonSerialize
+   * @test JsonMessageSource::jsonSerialize
    */
   public function testJsonSerialize() {
-    $data = $this->model->jsonSerialize();
 
-    $this->assertObjectHasAttribute('basePath', $data);
-    $this->assertEquals(__DIR__.'/fixtures', $data->basePath);
+    it('should...', function() {
 
-    $this->assertObjectHasAttribute('forceTranslation', $data);
-    $this->assertFalse($data->forceTranslation);
+    });
+
+    $data = (new JsonMessageSource(['basePath' => __DIR__.'/fixtures']))->jsonSerialize();
+    expect($data)->to->have->property('basePath')->that->equal(__DIR__.'/fixtures');
+    expect($data)->to->have->property('forceTranslation')->that->is->false;
   }
 
   /**
-   * @test ::loadMessagesFromFile
+   * @test JsonMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile() {
     $loadMessagesFromFile = function($messageFile) {
       return $this->loadMessagesFromFile($messageFile);
     };
 
-    $expected = [ 'Hello World!' => 'Bonjour le monde !' ];
-    $this->assertEquals($expected, $loadMessagesFromFile->call($this->model, "{$this->model->basePath}/fr/messages.json"));
-    $this->assertEquals('Bonjour le monde !', $this->model->translate('messages', 'Hello World!', 'fr'));
+    it('should...', function() {
+
+    });
+
+    $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+    expect($loadMessagesFromFile->call($model, "{$model->basePath}/fr/messages.json"))->to->equal(['Hello World!' => 'Bonjour le monde !']);
+    expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
   }
 
   /**
-   * @test ::__toString
+   * @test JsonMessageSource::__toString
    */
   public function testToString() {
-    $model = (string) $this->model;
+    $model = (string) new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+
+    it('should...', function() {
+
+    });
+
     $this->assertStringStartsWith('yii\i18n\JsonMessageSource {', $model);
     $this->assertContains(sprintf('"basePath":"%s"', str_replace('\\', '\\\\', __DIR__.'/fixtures')), $model);
     $this->assertContains('"forceTranslation":false', $model);
-  }
-
-  /**
-   * Performs a common set of tasks just before each test method is called.
-   */
-  protected function setUp() {
-    $this->model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
   }
 }
