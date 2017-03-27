@@ -1,7 +1,4 @@
 <?php
-/**
- * Entry point of the unit tests.
- */
 use yii\console\{Application};
 
 // Set the environment.
@@ -15,8 +12,7 @@ require_once "$rootPath/vendor/yiisoft/yii2/Yii.php";
 
 // Initialize the application.
 Yii::setAlias('@root', $rootPath);
-Yii::createObject([
-  'class' => Application::class,
+new Application([
   'id' => 'yii2-json-messages',
   'basePath' => '@root/lib',
   'vendorPath' => '@root/vendor'

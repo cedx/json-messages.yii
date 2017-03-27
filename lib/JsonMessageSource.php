@@ -1,7 +1,4 @@
 <?php
-/**
- * Implementation of the `yii\i18n\JsonMessageSource` class.
- */
 namespace yii\i18n;
 use yii\helpers\{FileHelper, Json};
 
