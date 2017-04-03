@@ -15,26 +15,21 @@ class JsonMessageSourceTest extends TestCase {
       return $this->getMessageFilePath($category, $language);
     };
 
-    it('should...', function() {
-
+    it('should return the proper path to the message file', function() use ($getMessageFilePath) {
+      $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal(str_replace('/', DIRECTORY_SEPARATOR, "{$model->basePath}/fr/messages.json"));
     });
-
-    $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
-    expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal(str_replace('/', DIRECTORY_SEPARATOR, "{$model->basePath}/fr/messages.json"));
   }
 
   /**
    * @test JsonMessageSource::jsonSerialize
    */
   public function testJsonSerialize() {
-
-    it('should...', function() {
-
+    it('should return a map with the same public values', function() {
+      $data = (new JsonMessageSource(['basePath' => __DIR__.'/fixtures']))->jsonSerialize();
+      expect($data)->to->have->property('basePath')->that->equal(__DIR__.'/fixtures');
+      expect($data)->to->have->property('forceTranslation')->that->is->false;
     });
-
-    $data = (new JsonMessageSource(['basePath' => __DIR__.'/fixtures']))->jsonSerialize();
-    expect($data)->to->have->property('basePath')->that->equal(__DIR__.'/fixtures');
-    expect($data)->to->have->property('forceTranslation')->that->is->false;
   }
 
   /**
@@ -45,13 +40,15 @@ class JsonMessageSourceTest extends TestCase {
       return $this->loadMessagesFromFile($messageFile);
     };
 
-    it('should...', function() {
-
+    it('should properly load the JSON source and parse it as array', function() use ($loadMessagesFromFile) {
+      $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+      expect($loadMessagesFromFile->call($model, "{$model->basePath}/fr/messages.json"))->to->equal(['Hello World!' => 'Bonjour le monde !']);
     });
 
-    $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
-    expect($loadMessagesFromFile->call($model, "{$model->basePath}/fr/messages.json"))->to->equal(['Hello World!' => 'Bonjour le monde !']);
-    expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
+    it('should enable proper translation of source strings', function() {
+      $model = new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
+      expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
+    });
   }
 
   /**
@@ -60,12 +57,13 @@ class JsonMessageSourceTest extends TestCase {
   public function testToString() {
     $model = (string) new JsonMessageSource(['basePath' => __DIR__.'/fixtures']);
 
-    it('should...', function() {
-
+    it('should start with the class name', function() use ($model) {
+      expect($model)->to->startWith('yii\i18n\JsonMessageSource {');
     });
 
-    $this->assertStringStartsWith('yii\i18n\JsonMessageSource {', $model);
-    $this->assertContains(sprintf('"basePath":"%s"', str_replace('\\', '\\\\', __DIR__.'/fixtures')), $model);
-    $this->assertContains('"forceTranslation":false', $model);
+    it('should contain the instance properties', function() use ($model) {
+      expect($model)->to->contain(sprintf('"basePath":"%s"', str_replace('\\', '\\\\', __DIR__.'/fixtures')))
+        ->and->contain('"forceTranslation":false');
+    });
   }
 }
