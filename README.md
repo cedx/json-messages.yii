@@ -31,11 +31,13 @@ $ composer require cedx/yii2-json-messages
 In your application configuration file, you can use the following message source:
 
 ```php
+use yii\i18n\{JsonMessageSource};
+
 return [
   'components' => [
     'i18n' => [
       'translations' => [
-        '*' => 'yii\i18n\JsonMessageSource'
+        '*' => JsonMessageSource::class
       ]
     ]
   ]
