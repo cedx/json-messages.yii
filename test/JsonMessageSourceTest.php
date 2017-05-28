@@ -1,5 +1,7 @@
 <?php
 namespace yii\i18n;
+
+use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
 
 /**
