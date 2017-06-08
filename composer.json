@@ -29,7 +29,7 @@
     "php": ">=7.0.0",
     "ext-json": "*",
     "ext-pcre": "*",
-    "yiisoft/yii2": "^2.0.11"
+    "yiisoft/yii2": "^2.0.12"
   },
   "require-dev": {
     "cedx/coveralls": "^1.0.0",
