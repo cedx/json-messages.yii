@@ -1,5 +1,7 @@
 <?php
+declare(strict_types=1);
 namespace yii\i18n;
+
 use yii\helpers\{FileHelper, Json};
 
 /**
