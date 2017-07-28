@@ -1,6 +1,11 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+## Version 2.4.0
+- Enabled the strict typing.
+- Replaced [phpDocumentor](https://www.phpdoc.org) documentation generator by [ApiGen](https://github.com/ApiGen/ApiGen).
+- Updated the package dependencies.
+
 ## Version 2.3.0
 - Ported the unit test assertions from [TDD](https://en.wikipedia.org/wiki/Test-driven_development) to [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development).
 

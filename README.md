@@ -45,6 +45,7 @@ return [
 ```
 
 ## See also
+- [API reference](https://cedx.github.io/yii2-json-messages)
 - [Code coverage](https://coveralls.io/github/cedx/yii2-json-messages)
 - [Continuous integration](https://travis-ci.org/cedx/yii2-json-messages)
 
