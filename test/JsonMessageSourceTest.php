@@ -14,8 +14,7 @@ class JsonMessageSourceTest extends TestCase {
    * @test JsonMessageSource::getMessageFilePath
    */
   public function testGetMessageFile() {
-    $getMessageFilePath = function($category, $language): string {
-      /** @var JsonMessageSource $this */
+    $getMessageFilePath = function($category, $language) {
       return $this->getMessageFilePath($category, $language);
     };
 
@@ -40,8 +39,7 @@ class JsonMessageSourceTest extends TestCase {
    * @test JsonMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile() {
-    $loadMessagesFromFile = function($messageFile): array {
-      /** @var JsonMessageSource $this */
+    $loadMessagesFromFile = function($messageFile) {
       return $this->loadMessagesFromFile($messageFile);
     };
 
