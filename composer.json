@@ -1,11 +1,9 @@
 {
   "description": "JSON message source for the Yii Framework.",
   "homepage": "https://github.com/cedx/yii2-json-messages",
-  "name": "cedx/yii2-json-messages",
-
   "license": "Apache-2.0",
+  "name": "cedx/yii2-json-messages",
   "type": "yii2-extension",
-
   "authors": [{
     "email": "cedric@belin.io",
     "name": "Cédric Belin"
