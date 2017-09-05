@@ -10,6 +10,16 @@ use yii\helpers\{FileHelper, Json};
 class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
 
   /**
+   * @var bool Value indicating whether nested JSON objects are enabled.
+   */
+  public $enableNesting = false;
+
+  /**
+   * @var string The string used to delimit properties of nested JSON objects.
+   */
+  public $nestingSeparator = '.';
+
+  /**
    * Returns a string representation of this object.
    * @return string The string representation of this object.
    */
@@ -49,7 +59,30 @@ class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
    */
   protected function loadMessagesFromFile($messageFile): array {
     if (!is_file($messageFile)) return [];
+
     $messages = Json::decode(@file_get_contents($messageFile));
-    return is_array($messages) ? $messages : [];
+    if (!is_array($messages)) return [];
+
+    return $this->enableNesting ? $this->flatten($messages) : $messages;
+  }
+
+  /**
+   * Flattens a multidimensional array into a single array where the keys are property paths to the contained scalar values.
+   * @param array $array The input array.
+   * @return array The flattened array.
+   */
+  private function flatten(array $array): array {
+    $flattened = [];
+
+    $iterator = new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array), \RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($iterator as $key => $value) {
+      if (!$iterator->callHasChildren()) {
+        $path = [];
+        for ($i = 0, $length = $iterator->getDepth(); $i <= $length; $i++) $path[] = $iterator->getSubIterator($i)->key();
+        $flattened[implode($this->nestingSeparator, $path)] = $value;
+      }
+    }
+
+    return $flattened;
   }
 }

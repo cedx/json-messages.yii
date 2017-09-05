@@ -2,6 +2,7 @@
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
 ## Version 3.0.0
+- Added support for nested JSON objects.
 - Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Version 2.4.0
