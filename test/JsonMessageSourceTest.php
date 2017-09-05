@@ -104,14 +104,18 @@ class JsonMessageSourceTest extends TestCase {
     };
 
     it('should properly load the JSON source and parse it as array', function() use ($loadMessagesFromFile) {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
+      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.json");
-      expect($loadMessagesFromFile->call($model, $messageFile))->to->equal(['Hello World!' => 'Bonjour le monde !']);
+      expect($loadMessagesFromFile->call($model, $messageFile))->to->equal([
+        'Hello World!' => 'Bonjour le monde !',
+        'foo.bar.baz' => 'FooBarBaz'
+      ]);
     });
 
     it('should enable proper translation of source strings', function() {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
+      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
+      expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
     });
   }
 

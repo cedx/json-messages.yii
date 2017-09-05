@@ -1,3 +1,8 @@
 {
-  "Hello World!": "Bonjour le monde !"
+  "Hello World!": "Bonjour le monde !",
+  "foo": {
+    "bar": {
+      "baz": "FooBarBaz"
+    }
+  }
 }
