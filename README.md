@@ -50,4 +50,4 @@ return [
 - [Continuous integration](https://travis-ci.org/cedx/yii2-json-messages)
 
 ## License
-[JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) is distributed under the Apache License, version 2.0.
+[JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) is distributed under the MIT License.

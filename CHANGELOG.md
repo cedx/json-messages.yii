@@ -1,6 +1,9 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+## Version 3.0.0
+- Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
+
 ## Version 2.4.0
 - Enabled the strict typing.
 - Replaced [phpDocumentor](https://www.phpdoc.org) documentation generator by [ApiGen](https://github.com/ApiGen/ApiGen).
