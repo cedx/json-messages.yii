@@ -1,8 +1,8 @@
-/.c9/
-/.idea/
-/*.iml
-/**/.DS_Store
-/composer.lock
+/.*/
 /doc/api/
 /var/
 /vendor/
+
+/*.iml
+/**/.DS_Store
+/composer.lock
