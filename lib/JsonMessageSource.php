@@ -72,17 +72,17 @@ class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
    * @return array The flattened array.
    */
   private function flatten(array $array): array {
-    $flattened = [];
+    $flatMap = [];
 
     $iterator = new \RecursiveIteratorIterator(new \RecursiveArrayIterator($array), \RecursiveIteratorIterator::SELF_FIRST);
     foreach ($iterator as $key => $value) {
       if (!$iterator->callHasChildren()) {
         $path = [];
         for ($i = 0, $length = $iterator->getDepth(); $i <= $length; $i++) $path[] = $iterator->getSubIterator($i)->key();
-        $flattened[implode($this->nestingSeparator, $path)] = $value;
+        $flatMap[implode($this->nestingSeparator, $path)] = $value;
       }
     }
 
-    return $flattened;
+    return $flatMap;
   }
 }
