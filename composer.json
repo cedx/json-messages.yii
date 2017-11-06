@@ -28,7 +28,7 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "yiisoft/yii2": "^2.0.12"
+    "yiisoft/yii2": "^2.0.13"
   },
   "require-dev": {
     "cedx/coveralls": "^6.0.0",
