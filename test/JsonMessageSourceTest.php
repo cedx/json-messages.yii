@@ -13,7 +13,7 @@ class JsonMessageSourceTest extends TestCase {
   /**
    * @test JsonMessageSource::flatten
    */
-  public function testFlatten() {
+  public function testFlatten(): void {
     $flatten = function($array) {
       return $this->flatten($array);
     };
@@ -72,7 +72,7 @@ class JsonMessageSourceTest extends TestCase {
   /**
    * @test JsonMessageSource::getMessageFilePath
    */
-  public function testGetMessageFilePath() {
+  public function testGetMessageFilePath(): void {
     $getMessageFilePath = function($category, $language) {
       return $this->getMessageFilePath($category, $language);
     };
@@ -87,7 +87,7 @@ class JsonMessageSourceTest extends TestCase {
   /**
    * @test JsonMessageSource::jsonSerialize
    */
-  public function testJsonSerialize() {
+  public function testJsonSerialize(): void {
     it('should return a map with the same public values', function() {
       $data = (new JsonMessageSource(['basePath' => '@root/test/fixtures']))->jsonSerialize();
       expect($data)->to->have->property('basePath')->that->equal('@root/test/fixtures');
@@ -98,7 +98,7 @@ class JsonMessageSourceTest extends TestCase {
   /**
    * @test JsonMessageSource::loadMessagesFromFile
    */
-  public function testLoadMessagesFromFile() {
+  public function testLoadMessagesFromFile(): void {
     $loadMessagesFromFile = function($messageFile) {
       return $this->loadMessagesFromFile($messageFile);
     };
@@ -122,7 +122,7 @@ class JsonMessageSourceTest extends TestCase {
   /**
    * @test JsonMessageSource::__toString
    */
-  public function testToString() {
+  public function testToString(): void {
     $model = (string) new JsonMessageSource(['basePath' => '@root/test/fixtures']);
 
     it('should start with the class name', function() use ($model) {
