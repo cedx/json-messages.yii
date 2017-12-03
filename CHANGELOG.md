@@ -1,6 +1,10 @@
 # Changelog
 This file contains highlights of what changes on each version of the [JSON Messages for Yii](https://github.com/cedx/yii2-json-messages) library.
 
+## Version [4.0.0](https://github.com/cedx/yii2-json-messages/compare/v3.0.0...v4.0.0)
+- Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: using PHP 7.1 features, like void functions.
+
 ## Version [3.0.0](https://github.com/cedx/yii2-json-messages/compare/v2.4.0...v3.0.0)
 - Added support for nested JSON objects.
 - Changed licensing for the [MIT License](https://opensource.org/licenses/MIT).
