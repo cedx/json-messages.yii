@@ -1,6 +1,6 @@
 {
   "description": "JSON message source for the Yii Framework.",
-  "homepage": "https://github.com/cedx/yii2-json-messages",
+  "homepage": "https://cedx.github.io/yii2-json-messages",
   "license": "MIT",
   "name": "cedx/yii2-json-messages",
   "type": "yii2-extension",
@@ -33,13 +33,14 @@
   "require-dev": {
     "cedx/coveralls": "^6.0.0",
     "cedx/phpunit-expect": "^0.4.0",
-    "phing/phing": "^2.16.0"
+    "phing/phing": "^2.16.1"
   },
   "scripts": {
     "coverage": "coveralls var/coverage.xml",
     "test": "phpunit --colors=auto --verbose"
   },
   "support": {
+    "docs": "https://cedx.github.io/yii2-json-messages/api",
     "issues": "https://github.com/cedx/yii2-json-messages/issues"
   }
 }
