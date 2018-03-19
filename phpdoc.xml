@@ -3,7 +3,7 @@
   <title>JSON Messages for Yii</title>
 
   <parser>
-    <target>build</target>
+    <target>var</target>
   </parser>
   <transformer>
     <target>doc/api</target>
