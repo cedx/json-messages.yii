@@ -4,6 +4,7 @@ namespace yii\i18n;
 
 use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
+use yii\console\{Application};
 
 /**
  * Tests the features of the `yii\i18n\JsonMessageSource` class.
@@ -133,5 +134,15 @@ class JsonMessageSourceTest extends TestCase {
       expect($model)->to->contain('"basePath":"@root/test/fixtures"')
         ->and->contain('"forceTranslation":false');
     });
+  }
+
+  /**
+   * Performs a common set of tasks just before each test method is called.
+   */
+  protected function setUp(): void {
+    new Application([
+      'id' => 'yii2-json-messages',
+      'basePath' => '@root/lib'
+    ]);
   }
 }
