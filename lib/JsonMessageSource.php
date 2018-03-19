@@ -7,7 +7,7 @@ use yii\helpers\{FileHelper, Json};
 /**
  * Represents a message source that stores translated messages in JSON files.
  */
-class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
+class JsonMessageSource extends PhpMessageSource {
 
   /**
    * @var bool Value indicating whether nested JSON objects are enabled.
@@ -18,28 +18,6 @@ class JsonMessageSource extends PhpMessageSource implements \JsonSerializable {
    * @var string The string used to delimit properties of nested JSON objects.
    */
   public $nestingSeparator = '.';
-
-  /**
-   * Returns a string representation of this object.
-   * @return string The string representation of this object.
-   */
-  public function __toString(): string {
-    $json = Json::encode($this);
-    return static::class." $json";
-  }
-
-  /**
-   * Converts this object to a map in JSON format.
-   * @return \stdClass The map in JSON format corresponding to this object.
-   */
-  public function jsonSerialize(): \stdClass {
-    return (object) [
-      'basePath' => $this->basePath,
-      'fileMap' => $this->fileMap,
-      'forceTranslation' => $this->forceTranslation,
-      'sourceLanguage' => $this->sourceLanguage
-    ];
-  }
 
   /**
    * Returns message file path for the specified language and category.
