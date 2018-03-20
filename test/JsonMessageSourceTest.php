@@ -86,17 +86,6 @@ class JsonMessageSourceTest extends TestCase {
   }
 
   /**
-   * @test JsonMessageSource::jsonSerialize
-   */
-  public function testJsonSerialize(): void {
-    it('should return a map with the same public values', function() {
-      $data = (new JsonMessageSource(['basePath' => '@root/test/fixtures']))->jsonSerialize();
-      expect($data)->to->have->property('basePath')->that->equal('@root/test/fixtures');
-      expect($data)->to->have->property('forceTranslation')->that->is->false;
-    });
-  }
-
-  /**
    * @test JsonMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile(): void {
@@ -117,22 +106,6 @@ class JsonMessageSourceTest extends TestCase {
       $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
       expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
-    });
-  }
-
-  /**
-   * @test JsonMessageSource::__toString
-   */
-  public function testToString(): void {
-    $model = (string) new JsonMessageSource(['basePath' => '@root/test/fixtures']);
-
-    it('should start with the class name', function() use ($model) {
-      expect($model)->to->startWith('yii\i18n\JsonMessageSource {');
-    });
-
-    it('should contain the instance properties', function() use ($model) {
-      expect($model)->to->contain('"basePath":"@root/test/fixtures"')
-        ->and->contain('"forceTranslation":false');
     });
   }
 
