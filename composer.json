@@ -2,9 +2,7 @@
   "description": "JSON message source for the Yii Framework.",
   "homepage": "https://cedx.github.io/yii2-json-messages",
   "license": "MIT",
-  "minimum-stability": "dev",
   "name": "cedx/yii2-json-messages",
-  "prefer-stable": true,
   "type": "yii2-extension",
   "authors": [{
     "email": "cedric@belin.io",
@@ -30,12 +28,11 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "yiisoft/yii2": "^2.0.14"
+    "yiisoft/yii2": "^2.0.15"
   },
   "require-dev": {
     "cedx/coveralls": "^6.0.0",
     "cedx/phpunit-expect": "^0.4.0",
-    "phpdocumentor/phpdocumentor": "dev-develop",
     "phing/phing": "^2.16.1"
   },
   "scripts": {
