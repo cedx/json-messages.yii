@@ -1,7 +1,7 @@
 site_name: JSON Messages for Yii
 site_description: JSON message source for Yii, high-performance PHP framework.
 site_author: Cédric Belin - cedric@belin.io
-site_url: https://cedx.github.io/yii2-json-messages
+site_url: https://dev.belin.io/yii2-json-messages
 
 docs_dir: doc
 site_dir: web

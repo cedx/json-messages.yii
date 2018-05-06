@@ -1,6 +1,6 @@
 {
   "description": "JSON message source for the Yii Framework.",
-  "homepage": "https://cedx.github.io/yii2-json-messages",
+  "homepage": "https://dev.belin.io/yii2-json-messages",
   "license": "MIT",
   "name": "cedx/yii2-json-messages",
   "type": "yii2-extension",
@@ -40,7 +40,7 @@
     "test": "phpunit --colors=auto --verbose"
   },
   "support": {
-    "docs": "https://cedx.github.io/yii2-json-messages/api",
+    "docs": "https://dev.belin.io/yii2-json-messages/api",
     "issues": "https://github.com/cedx/yii2-json-messages/issues"
   }
 }

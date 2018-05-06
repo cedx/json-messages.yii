@@ -1,7 +1,7 @@
 # See also
 
 ## Development
-- [API reference](https://cedx.github.io/yii2-json-messages/api)
+- [API reference](https://dev.belin.io/yii2-json-messages/api)
 - [Packagist package](https://packagist.org/packages/cedx/yii2-json-messages)
 - [Yii Framework](http://www.yiiframework.com/doc-2.0/guide-README.html)
 

@@ -4,10 +4,10 @@
 [JSON](http://json.org) message source for [Yii](http://www.yiiframework.com), high-performance [PHP](https://secure.php.net) framework.
 
 ## Resources
-- [Documentation](https://cedx.github.io/yii2-json-messages)
-- [API reference](https://cedx.github.io/yii2-json-messages/api)
+- [Documentation](https://dev.belin.io/yii2-json-messages)
+- [API reference](https://dev.belin.io/yii2-json-messages/api)
 - [Packagist package](https://packagist.org/packages/cedx/yii2-json-messages)
 - [GitHub repository](https://github.com/cedx/yii2-json-messages)
 
 ## License
-[JSON Messages for Yii](https://cedx.github.io/yii2-json-messages) is distributed under the MIT License.
+[JSON Messages for Yii](https://dev.belin.io/yii2-json-messages) is distributed under the MIT License.
