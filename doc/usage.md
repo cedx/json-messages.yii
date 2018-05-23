@@ -1,6 +1,6 @@
 # Usage
 This package provides a single class, `yii\i18n\JsonMessageSource` which is a message source that stores translated messages in JSON files.
-It extends from [`yii\i18n\PhpMessageSource`](http://www.yiiframework.com/doc-2.0/yii-i18n-phpmessagesource.html) class, so its usage is basically the same.
+It extends from [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-phpmessagesource) class, so its usage is basically the same.
 
 In your application configuration file, use the following message source:
 
@@ -28,10 +28,10 @@ Within a JSON file, an object literal of (source, translation) pairs provides th
 }
 ```
 
-See the [Yii guide](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html#message-translation) for more information about internationalization and message translation.
+See the [Yii guide](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#message-translation) for more information about internationalization and message translation.
 
 ## Nested JSON objects
-It is a common practice to use keys instead of original messages, alongside the enablement of the [`yii\i18n\JsonMessageSource::$forceTranslation`](http://www.yiiframework.com/doc-2.0/yii-i18n-messagesource.html#$forceTranslation-detail) property. For example:
+It is a common practice to use keys instead of original messages, alongside the enablement of the [`yii\i18n\JsonMessageSource::$forceTranslation`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-messagesource#$forceTranslation-detail) property. For example:
 
 ```json
 {

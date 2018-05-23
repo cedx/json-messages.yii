@@ -83,7 +83,7 @@
 - Updated the development dependencies.
 
 ## Version [0.3.0](https://github.com/cedx/yii2-json-messages/compare/v0.2.0...v0.3.0)
-- Breaking change: ported the library API to [Yii](http://www.yiiframework.com) version 2.
+- Breaking change: ported the library API to [Yii](https://www.yiiframework.com) version 2.
 
 ## Version [0.2.0](https://github.com/cedx/yii2-json-messages/compare/v0.1.1...v0.2.0)
 - Breaking change: ported the library API to [namespaces](https://secure.php.net/manual/en/language.namespaces.php).
