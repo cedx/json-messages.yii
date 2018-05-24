@@ -5,7 +5,7 @@ Before installing **JSON Messages for Yii**, you need to make sure you have [PHP
 and [Composer](https://getcomposer.org), the PHP package manager, up and running.
 
 !!! warning
-    JSON Messages for Yii requires PHP >= **7.1.0**.
+    JSON Messages for Yii requires PHP >= **7.2.0**.
     
 You can verify if you're already good to go with the following commands:
 
