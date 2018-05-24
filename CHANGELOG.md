@@ -2,6 +2,7 @@
 
 ## Version [5.0.0](https://github.com/cedx/yii2-json-messages/compare/v4.1.0...v5.0.0)
 - Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Updated the package dependencies.
 
 ## Version [4.1.0](https://github.com/cedx/yii2-json-messages/compare/v4.0.0...v4.1.0)
 - Added a user guide based on [MkDocs](http://www.mkdocs.org).
