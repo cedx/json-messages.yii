@@ -10,11 +10,11 @@
   </target>
 
   <target name="coverage" description="Upload the code coverage">
-    <exec command="vendor/bin/coveralls var/coverage.xml" passthru="true"/>
+    <exec command="php vendor/bin/coveralls var/coverage.xml" passthru="true"/>
   </target>
 
   <target name="doc" description="Build the documentation">
-    <exec command="vendor/bin/phpdoc" passthru="true"/>
+    <exec command="php vendor/bin/phpdoc" passthru="true"/>
     <exec command="mkdocs build" passthru="true"/>
   </target>
 
@@ -26,6 +26,6 @@
   </target>
 
   <target name="test" description="Run the tests">
-    <exec command="vendor/bin/phpunit --colors=auto --verbose" passthru="true"/>
+    <exec command="php vendor/bin/phpunit --colors=auto --verbose" passthru="true"/>
   </target>
 </project>
