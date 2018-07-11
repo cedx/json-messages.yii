@@ -37,10 +37,8 @@ class JsonMessageSource extends PhpMessageSource {
    */
   protected function loadMessagesFromFile($messageFile): array {
     if (!is_file($messageFile)) return [];
-
     $messages = Json::decode(@file_get_contents($messageFile));
     if (!is_array($messages)) return [];
-
     return $this->enableNesting ? $this->flatten($messages) : $messages;
   }
 

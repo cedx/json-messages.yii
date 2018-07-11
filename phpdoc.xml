@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpdoc>
-  <title>JSON Messages for Yii</title>
+  <title>JSON &amp; YAML Messages for Yii</title>
 
   <parser>
     <target>var</target>

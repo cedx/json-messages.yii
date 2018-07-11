@@ -1,8 +1,8 @@
 {
-  "description": "JSON message source for the Yii Framework.",
-  "homepage": "https://dev.belin.io/yii2-json-messages",
+  "description": "JSON and YAML message sources for the Yii Framework.",
+  "homepage": "https://dev.belin.io/yii2-i18n-messages",
   "license": "MIT",
-  "name": "cedx/yii2-json-messages",
+  "name": "cedx/yii2-i18n-messages",
   "type": "yii2-extension",
   "authors": [{
     "email": "cedric@belin.io",
@@ -28,6 +28,7 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
+    "symfony/yaml": "^4.1.1",
     "yiisoft/yii2": "^2.0.15"
   },
   "require-dev": {
@@ -40,7 +41,7 @@
     "test": "phpunit --colors=auto --verbose"
   },
   "support": {
-    "docs": "https://dev.belin.io/yii2-json-messages/api",
-    "issues": "https://github.com/cedx/yii2-json-messages/issues"
+    "docs": "https://dev.belin.io/yii2-i18n-messages/api",
+    "issues": "https://github.com/cedx/yii2-i18n-messages/issues"
   }
 }

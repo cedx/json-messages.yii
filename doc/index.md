@@ -11,7 +11,7 @@ with your frontend application, and even use nesting.
 Install the latest version of **JSON Messages for Yii** with [Composer](https://getcomposer.org):
 
 ```shell
-composer require cedx/yii2-json-messages
+composer require cedx/yii2-i18n-messages
 ```
 
 For detailed instructions, see the [installation guide](installation.md).

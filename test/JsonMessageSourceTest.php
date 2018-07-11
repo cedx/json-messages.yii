@@ -114,7 +114,7 @@ class JsonMessageSourceTest extends TestCase {
    */
   protected function setUp(): void {
     new Application([
-      'id' => 'yii2-json-messages',
+      'id' => 'yii2-i18n-messages',
       'basePath' => '@root/lib'
     ]);
   }

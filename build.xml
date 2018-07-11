@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project default="test" name="yii2-json-messages">
+<project default="test" name="yii2-i18n-messages">
   <if>
     <os family="windows"/>
     <then><property name="composer" value="C:\Program Files\PHP\share\composer.phar"/></then>

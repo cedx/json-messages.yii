@@ -28,7 +28,7 @@ From a command prompt, run:
 
 ```shell
 composer global require fxp/composer-asset-plugin
-composer require cedx/yii2-json-messages
+composer require cedx/yii2-i18n-messages
 ```
 
 ### 2. Import it
