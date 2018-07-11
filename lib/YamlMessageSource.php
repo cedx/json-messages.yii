@@ -7,10 +7,10 @@ use Symfony\Component\Yaml\{Yaml};
 /**
  * Represents a message source that stores translated messages in YAML files.
  */
-class YamlMessageSource extends HierarchicalMessageSource {
+class YamlMessageSource extends FileMessageSource {
 
   /**
-   * @var string TODO !!! description
+   * @var string The extension of the YAML files.
    */
   public $fileExtension = 'yaml';
 

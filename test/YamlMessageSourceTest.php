@@ -7,12 +7,12 @@ use PHPUnit\Framework\{TestCase};
 use yii\console\{Application};
 
 /**
- * Tests the features of the `yii\i18n\JsonMessageSource` class.
+ * Tests the features of the `yii\i18n\YamlMessageSource` class.
  */
-class JsonMessageSourceTest extends TestCase {
+class YamlMessageSourceTest extends TestCase {
 
   /**
-   * @test JsonMessageSource::getMessageFilePath
+   * @test YamlMessageSource::getMessageFilePath
    */
   public function testGetMessageFilePath(): void {
     $getMessageFilePath = function($category, $language) {
@@ -20,14 +20,14 @@ class JsonMessageSourceTest extends TestCase {
     };
 
     it('should return the proper path to the message file', function() use ($getMessageFilePath) {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
-      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.json');
+      $model = new YamlMessageSource(['basePath' => '@root/test/fixtures']);
+      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.yaml');
       expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal($messageFile);
     });
   }
 
   /**
-   * @test JsonMessageSource::loadMessagesFromFile
+   * @test YamlMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile(): void {
     $loadMessagesFromFile = function($messageFile) {
@@ -35,8 +35,8 @@ class JsonMessageSourceTest extends TestCase {
     };
 
     it('should properly load the JSON source and parse it as array', function() use ($loadMessagesFromFile) {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.json");
+      $model = new YamlMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+      $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.yaml");
       expect($loadMessagesFromFile->call($model, $messageFile))->to->equal([
         'Hello World!' => 'Bonjour le monde !',
         'foo.bar.baz' => 'FooBarBaz'
@@ -44,7 +44,7 @@ class JsonMessageSourceTest extends TestCase {
     });
 
     it('should enable proper translation of source strings', function() {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+      $model = new YamlMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
       expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
     });

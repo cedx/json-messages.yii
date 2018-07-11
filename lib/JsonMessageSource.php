@@ -7,10 +7,10 @@ use yii\helpers\{Json};
 /**
  * Represents a message source that stores translated messages in JSON files.
  */
-class JsonMessageSource extends HierarchicalMessageSource {
+class JsonMessageSource extends FileMessageSource {
 
   /**
-   * @var string TODO !!! description
+   * @var string The extension of the JSON files.
    */
   public $fileExtension = 'json';
 
