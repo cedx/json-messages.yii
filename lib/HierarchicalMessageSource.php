@@ -44,16 +44,15 @@ abstract class HierarchicalMessageSource extends PhpMessageSource {
   protected function loadMessagesFromFile($messageFile): array {
     if (!is_file($messageFile)) return [];
     $messages = $this->parseMessages(@file_get_contents($messageFile));
-    if (!is_array($messages)) return [];
     return $this->enableNesting ? $this->flatten($messages) : $messages;
   }
 
   /**
    * TODO
-   * @param string $messages
+   * @param string $messageData
    * @return array
    */
-  abstract protected function parseMessages(string $messages): array;
+  abstract protected function parseMessages(string $messageData): array;
 
   /**
    * Flattens a multidimensional array into a single array where the keys are property paths to the contained scalar values.
