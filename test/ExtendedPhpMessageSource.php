@@ -4,15 +4,14 @@ namespace yii\i18n;
 
 use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
-use yii\console\{Application};
 
 /**
- * Tests the features of the `yii\i18n\FileMessageSource` class.
+ * Tests the features of the `yii\i18n\ExtendedPhpMessageSource` class.
  */
-class FileMessageSourceTest extends TestCase {
+class ExtendedPhpMessageSourceTest extends TestCase {
 
   /**
-   * @test FileMessageSource::flatten
+   * @test ExtendedPhpMessageSource::flatten
    */
   public function testFlatten(): void {
     $flatten = function($array) {
@@ -20,7 +19,7 @@ class FileMessageSourceTest extends TestCase {
     };
 
     it('should merge the keys of a multidimensional array', function() use ($flatten) {
-      $model = new FileMessageSource;
+      $model = new ExtendedPhpMessageSource;
       expect($flatten->call($model, []))->to->equal([]);
       expect($flatten->call($model, ['foo' => 'bar', 'baz' => 'qux']))->to->equal(['foo' => 'bar', 'baz' => 'qux']);
       expect($flatten->call($model, ['foo' => ['bar' => 'baz']]))->to->equal(['foo.bar' => 'baz']);
@@ -52,7 +51,7 @@ class FileMessageSourceTest extends TestCase {
         ]]
       ];
 
-      $model = new FileMessageSource(['nestingSeparator' => '/']);
+      $model = new ExtendedPhpMessageSource(['nestingSeparator' => '/']);
       expect($flatten->call($model, $source))->to->equal([
         'foo' => 'bar',
         'bar/baz' => 'qux',
@@ -60,7 +59,7 @@ class FileMessageSourceTest extends TestCase {
         'baz/qux/bar' => 'baz'
       ]);
 
-      $model = new FileMessageSource(['nestingSeparator' => '->']);
+      $model = new ExtendedPhpMessageSource(['nestingSeparator' => '->']);
       expect($flatten->call($model, $source))->to->equal([
         'foo' => 'bar',
         'bar->baz' => 'qux',
@@ -71,7 +70,7 @@ class FileMessageSourceTest extends TestCase {
   }
 
   /**
-   * @test FileMessageSource::getMessageFilePath
+   * @test ExtendedPhpMessageSource::getMessageFilePath
    */
   public function testGetMessageFilePath(): void {
     $getMessageFilePath = function($category, $language) {
@@ -79,25 +78,20 @@ class FileMessageSourceTest extends TestCase {
     };
 
     it('should return the proper path to the message file', function() use ($getMessageFilePath) {
-      $model = new FileMessageSource(['basePath' => '@root/test/fixtures']);
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
       $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.php');
       expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal($messageFile);
     });
 
     it('should should support different file extensions', function() use ($getMessageFilePath) {
-      $model = new FileMessageSource(['basePath' => '@root/test/fixtures']);
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'fileExtension' => 'php7']);
       $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages');
-
-      $model->fileExtension = 'json';
-      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal("$messageFile.json");
-
-      $model->fileExtension = 'yaml';
-      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal("$messageFile.yaml");
+      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal("$messageFile.php7");
     });
   }
 
   /**
-   * @test FileMessageSource::loadMessagesFromFile
+   * @test ExtendedPhpMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile(): void {
     $loadMessagesFromFile = function($messageFile) {
@@ -105,7 +99,7 @@ class FileMessageSourceTest extends TestCase {
     };
 
     it('should properly load the JSON source and parse it as array', function() use ($loadMessagesFromFile) {
-      $model = new FileMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.php");
       expect($loadMessagesFromFile->call($model, $messageFile))->to->equal([
         'Hello World!' => 'Bonjour le monde !',
@@ -114,19 +108,24 @@ class FileMessageSourceTest extends TestCase {
     });
 
     it('should enable proper translation of source strings', function() {
-      $model = new FileMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
       expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
     });
   }
 
   /**
-   * Performs a common set of tasks just before each test method is called.
+   * @test ExtendedPhpMessageSource::parseMessages
    */
-  protected function setUp(): void {
-    new Application([
-      'id' => 'yii2-i18n-messages',
-      'basePath' => '@root/lib'
-    ]);
+  public function testParseMessages(): void {
+    $parseMessages = function($messageData) {
+      return $this->parseMessages($messageData);
+    };
+
+    // TODO
+    it('should parse a PHP file as a hierarchical array', function() use ($parseMessages) {
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+      $messages = $parseMessages->call($model, file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
+    });
   }
 }

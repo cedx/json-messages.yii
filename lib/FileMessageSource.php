@@ -5,9 +5,9 @@ namespace yii\i18n;
 use yii\helpers\{FileHelper};
 
 /**
- * Represents a message source that stores translated messages in YAML files.
+ * Provides the base class for a message source that stores translated messages in files.
  */
-class FileMessageSource extends PhpMessageSource {
+abstract class FileMessageSource extends PhpMessageSource {
 
   /**
    * @var bool Value indicating whether nested YAML objects are enabled.
@@ -17,7 +17,7 @@ class FileMessageSource extends PhpMessageSource {
   /**
    * @var string The extension of the message files.
    */
-  public $fileExtension = 'php';
+  public $fileExtension;
 
   /**
    * @var string The string used to delimit properties of nested YAML objects.
@@ -38,10 +38,10 @@ class FileMessageSource extends PhpMessageSource {
   /**
    * Loads the message translation for the specified language and category.
    * @param string $messageFile string The path to message file.
-   * @return string[] The message array, or an empty array if the file is not found or invalid.
+   * @return string[] The message array, or a `null` reference if the file is not found.
    */
   protected function loadMessagesFromFile($messageFile): array {
-    if (!is_file($messageFile)) return [];
+    if (!is_file($messageFile)) return null;
     $messages = $this->parseMessages(@file_get_contents($messageFile));
     return $this->enableNesting ? $this->flatten($messages) : $messages;
   }
@@ -51,9 +51,7 @@ class FileMessageSource extends PhpMessageSource {
    * @param string $messageData The input data.
    * @return array The translations contained in the specified input data.
    */
-  protected function parseMessages(string $messageData): array {
-    return eval("?>$messageData");
-  }
+  abstract protected function parseMessages(string $messageData): array;
 
   /**
    * Flattens a multidimensional array into a single array where the keys are property paths to the contained scalar values.
