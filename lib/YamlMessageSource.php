@@ -2,17 +2,18 @@
 declare(strict_types=1);
 namespace yii\i18n;
 
-use yii\helpers\{FileHelper, Json};
+use Symfony\Component\Yaml\{Yaml};
+use yii\helpers\{FileHelper};
 
 /**
- * Represents a message source that stores translated messages in JSON files.
+ * Represents a message source that stores translated messages in YAML files.
  */
-class JsonMessageSource extends HierarchicalMessageSource {
+class YamlMessageSource extends HierarchicalMessageSource {
 
   /**
    * @var string TODO !!! description
    */
-  public $fileExtension = 'json';
+  public $fileExtension = 'yaml';
 
   /**
    * Loads the message translation for the specified language and category.
@@ -21,7 +22,7 @@ class JsonMessageSource extends HierarchicalMessageSource {
    */
   protected function loadMessagesFromFile($messageFile): array {
     if (!is_file($messageFile)) return [];
-    $messages = Json::decode(@file_get_contents($messageFile));
+    $messages = Yaml::parse(@file_get_contents($messageFile));
     if (!is_array($messages)) return [];
     return $this->enableNesting ? $this->flatten($messages) : $messages;
   }

@@ -1,11 +1,11 @@
 # Installation
 
 ## Requirements
-Before installing **JSON Messages for Yii**, you need to make sure you have [PHP](https://secure.php.net)
+Before installing **JSON & YAML Messages for Yii**, you need to make sure you have [PHP](https://secure.php.net)
 and [Composer](https://getcomposer.org), the PHP package manager, up and running.
 
 !!! warning
-    JSON Messages for Yii requires PHP >= **7.2.0**.
+    JSON & YAML Messages for Yii requires PHP >= **7.2.0**.
     
 You can verify if you're already good to go with the following commands:
 
@@ -36,5 +36,8 @@ Now in your [PHP](https://secure.php.net) code, you can use:
 
 ```php
 <?php
-use yii\i18n\{JsonMessageSource};
+use yii\i18n\{
+  JsonMessageSource,
+  YamlMessageSource
+};
 ```

@@ -1,4 +1,4 @@
-# JSON Messages <small>for Yii</small>
+# JSON & YAML Messages <small>for Yii</small>
 
 ## Translate your application using JSON catalogs
 Use a message source that stores translated messages in [JSON](https://www.json.org) files.
@@ -8,7 +8,7 @@ or [`yii\i18n\DbMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18
 with your frontend application, and even use nesting.
 
 ## Quick start
-Install the latest version of **JSON Messages for Yii** with [Composer](https://getcomposer.org):
+Install the latest version of **JSON & YAML Messages for Yii** with [Composer](https://getcomposer.org):
 
 ```shell
 composer require cedx/yii2-i18n-messages
