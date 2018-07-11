@@ -12,21 +12,6 @@ use yii\console\{Application};
 class YamlMessageSourceTest extends TestCase {
 
   /**
-   * @test YamlMessageSource::getMessageFilePath
-   */
-  public function testGetMessageFilePath(): void {
-    $getMessageFilePath = function($category, $language) {
-      return $this->getMessageFilePath($category, $language);
-    };
-
-    it('should return the proper path to the message file', function() use ($getMessageFilePath) {
-      $model = new YamlMessageSource(['basePath' => '@root/test/fixtures']);
-      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.yaml');
-      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal($messageFile);
-    });
-  }
-
-  /**
    * @test YamlMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile(): void {

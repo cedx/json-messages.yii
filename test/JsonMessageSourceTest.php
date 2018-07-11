@@ -12,21 +12,6 @@ use yii\console\{Application};
 class JsonMessageSourceTest extends TestCase {
 
   /**
-   * @test JsonMessageSource::getMessageFilePath
-   */
-  public function testGetMessageFilePath(): void {
-    $getMessageFilePath = function($category, $language) {
-      return $this->getMessageFilePath($category, $language);
-    };
-
-    it('should return the proper path to the message file', function() use ($getMessageFilePath) {
-      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
-      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.json');
-      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal($messageFile);
-    });
-  }
-
-  /**
    * @test JsonMessageSource::loadMessagesFromFile
    */
   public function testLoadMessagesFromFile(): void {

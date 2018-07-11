@@ -15,9 +15,9 @@ class JsonMessageSource extends FileMessageSource {
   public $fileExtension = 'json';
 
   /**
-   * TODO
-   * @param string $messageData
-   * @return array
+   * Parses the translations contained in the specified input data.
+   * @param string $messageData The input data.
+   * @return array The translations contained in the specified input data.
    */
   protected function parseMessages(string $messageData): array {
     return is_array($messages = Json::decode($messageData)) ? $messages : [];

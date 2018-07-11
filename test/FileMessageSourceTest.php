@@ -83,6 +83,17 @@ class FileMessageSourceTest extends TestCase {
       $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.php');
       expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal($messageFile);
     });
+
+    it('should should support different file extensions', function() use ($getMessageFilePath) {
+      $model = new FileMessageSource(['basePath' => '@root/test/fixtures']);
+      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages');
+
+      $model->fileExtension = 'json';
+      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal("$messageFile.json");
+
+      $model->fileExtension = 'yaml';
+      expect($getMessageFilePath->call($model, 'messages', 'fr'))->to->equal("$messageFile.yaml");
+    });
   }
 
   /**
