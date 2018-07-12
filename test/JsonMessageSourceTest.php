@@ -111,6 +111,9 @@ class JsonMessageSourceTest extends TestCase {
       $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
       expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
+
+      $model->nestingSeparator = '/';
+      expect($model->translate('messages', 'foo/bar/baz', 'fr'), 'FooBarBaz');
     });
   }
 
@@ -122,10 +125,18 @@ class JsonMessageSourceTest extends TestCase {
       return $this->parseMessages($messageData);
     };
 
-    // TODO
     it('should parse a JSON file as a hierarchical array', function() use ($parseMessages) {
       $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       $messages = $parseMessages->call($model, file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.json")));
+      expect($messages)->equal([
+        'Hello World!' => 'Bonjour le monde !',
+        'foo' => ['bar' => ['baz' => 'FooBarBaz']]
+      ]);
+    });
+
+    it('should parse an invalid JSON file as an empty array', function() use ($parseMessages) {
+      $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
+      expect($parseMessages->call($model, ''))->to->be->empty;
     });
   }
 }

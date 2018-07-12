@@ -111,6 +111,9 @@ class ExtendedPhpMessageSourceTest extends TestCase {
       $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       expect($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
       expect($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
+
+      $model->nestingSeparator = '/';
+      expect($model->translate('messages', 'foo/bar/baz', 'fr'), 'FooBarBaz');
     });
   }
 
@@ -122,10 +125,18 @@ class ExtendedPhpMessageSourceTest extends TestCase {
       return $this->parseMessages($messageData);
     };
 
-    // TODO
     it('should parse a PHP file as a hierarchical array', function() use ($parseMessages) {
       $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
       $messages = $parseMessages->call($model, file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
+      expect($messages)->equal([
+        'Hello World!' => 'Bonjour le monde !',
+        'foo' => ['bar' => ['baz' => 'FooBarBaz']]
+      ]);
+    });
+
+    it('should parse an invalid PHP file as an empty array', function() use ($parseMessages) {
+      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
+      expect($parseMessages->call($model, ''))->to->be->empty;
     });
   }
 }
