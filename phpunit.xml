@@ -12,8 +12,7 @@
 
   <testsuites>
     <testsuite name="all">
-      <directory>test</directory>
-      <file>test/ExtendedPhpMessageSource.php</file>
+      <directory suffix=".php">test</directory>
     </testsuite>
   </testsuites>
 </phpunit>
