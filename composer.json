@@ -38,7 +38,7 @@
   },
   "scripts": {
     "coverage": "coveralls var/coverage.xml",
-    "test": "phpunit --colors=auto --verbose"
+    "test": "phpunit"
   },
   "support": {
     "docs": "https://dev.belin.io/yii2-i18n-messages/api",
