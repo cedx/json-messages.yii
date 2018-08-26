@@ -17,7 +17,7 @@ abstract class FileMessageSource extends PhpMessageSource {
   /**
    * @var string The extension of the message files.
    */
-  public $fileExtension;
+  public $fileExtension = '';
 
   /**
    * @var string The string used to delimit properties of nested YAML objects.
