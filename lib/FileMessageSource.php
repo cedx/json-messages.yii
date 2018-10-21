@@ -38,7 +38,7 @@ abstract class FileMessageSource extends PhpMessageSource {
   /**
    * Loads the message translation for the specified language and category.
    * @param string $messageFile string The path to message file.
-   * @return string[] The message array, or a `null` reference if the file is not found.
+   * @return string[]|null The message array, or a `null` reference if the file is not found.
    */
   protected function loadMessagesFromFile($messageFile): array {
     if (!is_file($messageFile)) return null;
