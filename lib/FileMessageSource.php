@@ -32,7 +32,7 @@ abstract class FileMessageSource extends PhpMessageSource {
    */
   protected function getMessageFilePath($category, $language): string {
     $path = parent::getMessageFilePath($category, $language);
-    return FileHelper::normalizePath(preg_replace('/\.php$/i', ".{$this->fileExtension}", $path));
+    return FileHelper::normalizePath((string) preg_replace('/\.php$/i', ".{$this->fileExtension}", $path));
   }
 
   /**
@@ -40,9 +40,9 @@ abstract class FileMessageSource extends PhpMessageSource {
    * @param string $messageFile string The path to message file.
    * @return string[]|null The message array, or a `null` reference if the file is not found.
    */
-  protected function loadMessagesFromFile($messageFile): array {
+  protected function loadMessagesFromFile($messageFile): ?array {
     if (!is_file($messageFile)) return null;
-    $messages = $this->parseMessages(@file_get_contents($messageFile));
+    $messages = $this->parseMessages((string) @file_get_contents($messageFile));
     return $this->enableNesting ? $this->flatten($messages) : $messages;
   }
 
