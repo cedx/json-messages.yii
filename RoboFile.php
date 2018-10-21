@@ -58,8 +58,8 @@ class RoboFile extends Tasks {
   /**
    * Runs the test suites.
    */
-  function test(): void {
-    $this->taskPhpUnit()->run();
+  function test() {
+    return $this->taskPhpUnit()->run();
   }
 
   /**
