@@ -1,3 +1,5 @@
 parameters:
+  excludes_analyse: [test/index.php]
+  ignoreErrors: ['/on an unknown class Yii/']
   level: max
   paths: [lib, test]
