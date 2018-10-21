@@ -10,19 +10,31 @@ use PHPUnit\Framework\{TestCase};
 class JsonMessageSourceTest extends TestCase {
 
   /**
-   * Tests the `JsonMessageSource::flatten
+   * @var \ReflectionClass The object used to change the visibility of inaccessible class members.
+   */
+  private static $reflection;
+
+  /**
+   * This method is called before the first test of this test class is run.
+   * @beforeClass
+   */
+  static function setUpBeforeClass(): void {
+    static::$reflection = new \ReflectionClass(JsonMessageSource::class);
+  }
+
+  /**
+   * Tests the `JsonMessageSource::flatten()` method.
    * @test
    */
   function testFlatten(): void {
-    $flatten = function($array) {
-      return $this->flatten($array);
-    };
+    $method = static::$reflection->getMethod('flatten');
+    $method->setAccessible(true);
 
     // It should merge the keys of a multidimensional array.
     $model = new JsonMessageSource;
-    assertThat($flatten->call($model, []), equalTo([]);
-    assertThat($flatten->call($model, ['foo' => 'bar', 'baz' => 'qux']), equalTo(['foo' => 'bar', 'baz' => 'qux']);
-    assertThat($flatten->call($model, ['foo' => ['bar' => 'baz']]), equalTo(['foo.bar' => 'baz']);
+    assertThat($method->invoke($model, []), equalTo([]));
+    assertThat($method->invoke($model, ['foo' => 'bar', 'baz' => 'qux']), equalTo(['foo' => 'bar', 'baz' => 'qux']));
+    assertThat($method->invoke($model, ['foo' => ['bar' => 'baz']]), equalTo(['foo.bar' => 'baz']));
 
     $source = [
       'foo' => 'bar',
@@ -33,12 +45,12 @@ class JsonMessageSourceTest extends TestCase {
       ]]
     ];
 
-    assertThat($flatten->call($model, $source), equalTo([
+    assertThat($method->invoke($model, $source), equalTo([
       'foo' => 'bar',
       'bar.baz' => 'qux',
       'baz.qux.foo' => 'bar',
       'baz.qux.bar' => 'baz'
-    ]);
+    ]));
 
     // It should allow different nesting separators.
     $source = [
@@ -51,87 +63,84 @@ class JsonMessageSourceTest extends TestCase {
     ];
 
     $model = new JsonMessageSource(['nestingSeparator' => '/']);
-    assertThat($flatten->call($model, $source), equalTo([
+    assertThat($method->invoke($model, $source), equalTo([
       'foo' => 'bar',
       'bar/baz' => 'qux',
       'baz/qux/foo' => 'bar',
       'baz/qux/bar' => 'baz'
-    ]);
+    ]));
 
     $model = new JsonMessageSource(['nestingSeparator' => '->']);
-    assertThat($flatten->call($model, $source), equalTo([
+    assertThat($method->invoke($model, $source), equalTo([
       'foo' => 'bar',
       'bar->baz' => 'qux',
       'baz->qux->foo' => 'bar',
       'baz->qux->bar' => 'baz'
-    ]);
+    ]));
   }
 
   /**
-   * Tests the `JsonMessageSource::getMessageFilePath
+   * Tests the `JsonMessageSource::getMessageFilePath()` method.
    * @test
    */
   function testGetMessageFilePath(): void {
-    $getMessageFilePath = function($category, $language) {
-      return $this->getMessageFilePath($category, $language);
-    };
+    $method = static::$reflection->getMethod('getMessageFilePath');
+    $method->setAccessible(true);
 
     // It should return the proper path to the message file.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
     $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.json');
-    assertThat($getMessageFilePath->call($model, 'messages', 'fr'), equalTo($messageFile);
+    assertThat($method->invoke($model, 'messages', 'fr'), equalTo($messageFile));
 
     // It should should support different file extensions.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'fileExtension' => 'json5']);
     $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages');
-    assertThat($getMessageFilePath->call($model, 'messages', 'fr'), equalTo("$messageFile.json5");
+    assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.json5"));
   }
 
   /**
-   * Tests the `JsonMessageSource::loadMessagesFromFile
+   * Tests the `JsonMessageSource::loadMessagesFromFile()` method.
    * @test
    */
   function testLoadMessagesFromFile(): void {
-    $loadMessagesFromFile = function($messageFile) {
-      return $this->loadMessagesFromFile($messageFile);
-    };
+    $method = static::$reflection->getMethod('loadMessagesFromFile');
+    $method->setAccessible(true);
 
     // It should properly load the JSON source and parse it as array.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
     $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.json");
-    assertThat($loadMessagesFromFile->call($model, $messageFile), equalTo([
+    assertThat($method->invoke($model, $messageFile), equalTo([
       'Hello World!' => 'Bonjour le monde !',
       'foo.bar.baz' => 'FooBarBaz'
-    ]);
+    ]));
 
     // It should enable proper translation of source strings.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-    assertThat($model->translate('messages', 'Hello World!', 'fr'), 'Bonjour le monde !');
-    assertThat($model->translate('messages', 'foo.bar.baz', 'fr'), 'FooBarBaz');
+    assertThat($model->translate('messages', 'Hello World!', 'fr'), equalTo('Bonjour le monde !'));
+    assertThat($model->translate('messages', 'foo.bar.baz', 'fr'), equalTo('FooBarBaz'));
 
     $model->nestingSeparator = '/';
-    assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), 'FooBarBaz');
+    assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
   /**
-   * Tests the `JsonMessageSource::parseMessages
+   * Tests the `JsonMessageSource::parseMessages()` method.
    * @test
    */
   function testParseMessages(): void {
-    $parseMessages = function($messageData) {
-      return $this->parseMessages($messageData);
-    };
+    $method = static::$reflection->getMethod('parseMessages');
+    $method->setAccessible(true);
 
     // It should parse a JSON file as a hierarchical array.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-    $messages = $parseMessages->call($model, file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.json")));
-    assertThat($messages)->equal([
+    $messages = $method->invoke($model, file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.json")));
+    assertThat($messages, equalTo([
       'Hello World!' => 'Bonjour le monde !',
       'foo' => ['bar' => ['baz' => 'FooBarBaz']]
-    ]);
+    ]));
 
     // It should parse an invalid JSON file as an empty array.
     $model = new JsonMessageSource(['basePath' => '@root/test/fixtures']);
-    assertThat($parseMessages->call($model, ''), isEmpty());
+    assertThat($method->invoke($model, ''), isEmpty());
   }
 }
