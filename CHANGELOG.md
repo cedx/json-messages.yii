@@ -1,10 +1,11 @@
 # Changelog
 
 ## Version [6.0.0](https://github.com/cedx/yii2-i18n-messages/compare/v5.0.0...v6.0.0)
-- Breaking change: renamed the package to `yii-i18n-messages`.
+- Breaking change: renamed the package to `yii2-i18n-messages`.
 - Added the `FileMessageSource` abstract class.
 - Added the `ExtendedPhpMessageSource` and `YamlMessageSource` classes.
 - Dropped the dependency on [PHPUnit-Expect](https://dev.belin.io/phpunit-expect).
+- Replaced the [Phing](https://www.phing.info) build system by [Robo](https://robo.li).
 
 ## Version [5.0.0](https://github.com/cedx/yii2-i18n-messages/compare/v4.1.0...v5.0.0)
 - Breaking change: raised the required [PHP](https://secure.php.net) version.
