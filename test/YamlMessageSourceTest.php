@@ -119,7 +119,7 @@ class YamlMessageSourceTest extends TestCase {
     assertThat($model->translate('messages', 'Hello World!', 'fr'), equalTo('Bonjour le monde !'));
     assertThat($model->translate('messages', 'foo.bar.baz', 'fr'), equalTo('FooBarBaz'));
 
-    $model->nestingSeparator = '/';
+    $model = new YamlMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true, 'nestingSeparator' => '/']);
     assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 

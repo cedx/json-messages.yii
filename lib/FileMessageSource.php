@@ -10,7 +10,7 @@ use yii\helpers\{FileHelper};
 abstract class FileMessageSource extends PhpMessageSource {
 
   /**
-   * @var bool Value indicating whether nested YAML objects are enabled.
+   * @var bool Value indicating whether nested objects are enabled.
    */
   public $enableNesting = false;
 
@@ -20,7 +20,7 @@ abstract class FileMessageSource extends PhpMessageSource {
   public $fileExtension = '';
 
   /**
-   * @var string The string used to delimit properties of nested YAML objects.
+   * @var string The string used to delimit properties of nested objects.
    */
   public $nestingSeparator = '.';
 
