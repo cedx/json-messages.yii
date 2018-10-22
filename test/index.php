@@ -13,4 +13,4 @@ require_once "$rootPath/vendor/yiisoft/yii2/Yii.php";
 Yii::setAlias('@root', $rootPath);
 
 // Start the application.
-new Application(['id' => 'yii2-i18n-messages', 'basePath' => '@root/lib']);
+new Application(['id' => 'yii2-json-messages', 'basePath' => '@root/lib']);

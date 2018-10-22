@@ -112,8 +112,7 @@ return [
       'translations' => [
         'app*' => [
           'class' => 'yii\i18n\JsonMessageSource',
-          'enableNesting' => true,
-          'forceTranslation' => true
+          'enableNesting' => true
         ]
       ]
     ]
@@ -132,7 +131,6 @@ return [
         'app*' => [
           'class' => 'yii\i18n\YamlMessageSource',
           'enableNesting' => true,
-          'forceTranslation' => true,
           'nestingSeparator' => '/'
         ]
       ]

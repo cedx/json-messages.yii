@@ -25,6 +25,14 @@ abstract class FileMessageSource extends PhpMessageSource {
   public $nestingSeparator = '.';
 
   /**
+   * Initializes the object.
+   */
+  function init(): void {
+    parent::init();
+    if ($this->enableNesting) $this->forceTranslation = true;
+  }
+
+  /**
    * Returns message file path for the specified language and category.
    * @param string $category The message category.
    * @param string $language The target language.

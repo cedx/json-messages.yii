@@ -10,7 +10,7 @@ or [`yii\i18n\DbMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18
 Install the latest version of **JSON & YAML Messages for Yii** with [Composer](https://getcomposer.org):
 
 ```shell
-composer require cedx/yii2-i18n-messages
+composer require cedx/yii2-json-messages
 ```
 
 For detailed instructions, see the [installation guide](installation.md).
