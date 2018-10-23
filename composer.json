@@ -19,12 +19,14 @@
     "optimize-autoloader": true
   },
   "keywords": [
+    "catalog",
     "i18n",
     "internationalization",
     "json",
     "locale",
     "messages",
     "translation",
+    "yaml",
     "yii2"
   ],
   "require": {
