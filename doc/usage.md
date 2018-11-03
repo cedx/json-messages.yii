@@ -153,5 +153,5 @@ function main(): void {
 ```
 
 !!! tip
-    This package also provides the `\yii\i18n\ExtendedPhpMessageSource` class.
+    This package also provides the `yii\i18n\ExtendedPhpMessageSource` class.
     This class adds nested objects support to the [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-phpmessagesource) class.
