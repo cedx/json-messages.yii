@@ -34,15 +34,15 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "symfony/yaml": "^4.1.6",
+    "symfony/yaml": "^4.1.7",
     "yiisoft/yii2": "^2.0.15"
   },
   "require-dev": {
-    "cedx/coveralls": "^9.0.1",
+    "cedx/coveralls": "^9.1.2",
     "consolidation/robo": "^1.3.1",
     "henrikbjorn/lurker": "^1.2.0",
     "phpstan/phpstan": "^0.10.5",
-    "phpunit/phpunit": "^7.4.3"
+    "phpunit/phpunit": "^7.4.4"
   },
   "scripts": {
     "coverage": "robo coverage",
@@ -50,6 +50,6 @@
   },
   "support": {
     "docs": "https://dev.belin.io/yii2-json-messages/api",
-    "issues": "https://github.com/cedx/yii2-json-messages/issues"
+    "issues": "https://git.belin.io/cedx/yii2-json-messages/issues"
   }
 }
