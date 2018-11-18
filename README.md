@@ -3,11 +3,14 @@
 
 [JSON](https://json.org) and [YAML](http://yaml.org) message sources for [Yii](https://www.yiiframework.com), high-performance [PHP](https://secure.php.net) framework.
 
-## Resources
-- [Documentation](https://dev.belin.io/yii2-json-messages)
+## Documentation
+- [User guide](https://dev.belin.io/yii2-json-messages)
 - [API reference](https://dev.belin.io/yii2-json-messages/api)
+
+## Development
+- [Git repository](https://git.belin.io/cedx/yii2-json-messages)
 - [Packagist package](https://packagist.org/packages/cedx/yii2-json-messages)
-- [GitHub repository](https://github.com/cedx/yii2-json-messages)
+- [Submit an issue](https://git.belin.io/cedx/yii2-json-messages/issues)
 
 ## License
 [JSON & YAML Messages for Yii](https://dev.belin.io/yii2-json-messages) is distributed under the MIT License.
