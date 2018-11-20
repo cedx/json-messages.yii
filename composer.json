@@ -50,6 +50,6 @@
   },
   "support": {
     "docs": "https://dev.belin.io/yii2-json-messages/api",
-    "issues": "https://git.belin.io/cedx/yii2-json-messages/issues"
+    "issues": "https://github.com/cedx/yii2-json-messages/issues"
   }
 }
