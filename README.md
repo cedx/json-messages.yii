@@ -10,7 +10,7 @@
 ## Development
 - [Git repository](https://git.belin.io/cedx/yii2-json-messages)
 - [Packagist package](https://packagist.org/packages/cedx/yii2-json-messages)
-- [Submit an issue](https://git.belin.io/cedx/yii2-json-messages/issues)
+- [Submit an issue](https://github.com/cedx/yii2-json-messages/issues)
 
 ## License
 [JSON & YAML Messages for Yii](https://dev.belin.io/yii2-json-messages) is distributed under the MIT License.
