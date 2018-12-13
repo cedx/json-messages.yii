@@ -38,7 +38,7 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "symfony/yaml": "^4.2.0",
+    "symfony/yaml": "^4.2.1",
     "yiisoft/yii2": "^2.0.15"
   },
   "require-dev": {
