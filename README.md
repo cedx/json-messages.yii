@@ -8,7 +8,7 @@
 - [API reference](https://dev.belin.io/yii2-json-messages/api)
 
 ## Development
-- [Git repository](https://git.belin.io/cedx/yii2-json-messages)
+- [Git repository](https://github.com/cedx/yii2-json-messages)
 - [Packagist package](https://packagist.org/packages/cedx/yii2-json-messages)
 - [Submit an issue](https://github.com/cedx/yii2-json-messages/issues)
 
