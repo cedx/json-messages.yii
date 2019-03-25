@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 namespace yii\i18n;
 
 use Symfony\Component\Yaml\{Yaml};
