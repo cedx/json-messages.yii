@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [5.2.0](https://github.com/cedx/yii2-json-messages/compare/v5.1.0...v5.2.0)
+- Modified the package layout.
+- Updated the package dependencies.
+
 ## Version [5.1.0](https://github.com/cedx/yii2-json-messages/compare/v5.0.0...v5.1.0)
 - Added the `FileMessageSource` abstract class.
 - Added the `ExtendedPhpMessageSource` and `YamlMessageSource` classes.
