@@ -9,8 +9,7 @@ They extends from [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc
 In your application configuration file, use the following message source:
 
 ```php
-<?php
-return [
+<?php return [
   'components' => [
     'i18n' => [
       'translations' => [
@@ -34,8 +33,7 @@ Within a [JSON](https://json.org) file, an object literal of (source, translatio
 In your application configuration file, use the following message source:
 
 ```php
-<?php
-return [
+<?php return [
   'components' => [
     'i18n' => [
       'translations' => [
@@ -105,8 +103,7 @@ To optin for this feature, you must set the `$enableNesting` property.
 In the application configuration file:
 
 ```php
-<?php
-return [
+<?php return [
   'components' => [
     'i18n' => [
       'translations' => [
@@ -123,8 +120,7 @@ return [
 If you don't want to use the dot notation, you can customize the character(s) used by setting the `$nestingSeparator` property. For example, to use the slash character (e.g. `/`) as property delimiter:
 
 ```php
-<?php
-return [
+<?php return [
   'components' => [
     'i18n' => [
       'translations' => [

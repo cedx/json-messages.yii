@@ -1,5 +1,4 @@
-<?php
-return [
+<?php return [
   'Hello World!' => 'Bonjour le monde !',
   'foo' => [
     'bar' => [
