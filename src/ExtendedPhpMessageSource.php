@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-/**
- * Represents a message source that stores translated messages in PHP files.
- */
+/** Represents a message source that stores translated messages in PHP files. */
 class ExtendedPhpMessageSource extends FileMessageSource {
 
-  /**
-   * @var string The extension of the PHP files.
-   */
+  /** @var string The extension of the PHP files. */
   public $fileExtension = 'php';
 
   /**

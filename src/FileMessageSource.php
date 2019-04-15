@@ -3,29 +3,19 @@ namespace yii\i18n;
 
 use yii\helpers\{FileHelper};
 
-/**
- * Provides the base class for a message source that stores translated messages in files.
- */
+/** Provides the base class for a message source that stores translated messages in files. */
 abstract class FileMessageSource extends PhpMessageSource {
 
-  /**
-   * @var bool Value indicating whether nested objects are enabled.
-   */
+  /** @var bool Value indicating whether nested objects are enabled. */
   public $enableNesting = false;
 
-  /**
-   * @var string The extension of the message files.
-   */
+  /** @var string The extension of the message files. */
   public $fileExtension = '';
 
-  /**
-   * @var string The string used to delimit properties of nested objects.
-   */
+  /** @var string The string used to delimit properties of nested objects. */
   public $nestingSeparator = '.';
 
-  /**
-   * Initializes the object.
-   */
+  /** Initializes this object. */
   function init(): void {
     parent::init();
     if ($this->enableNesting) $this->forceTranslation = true;

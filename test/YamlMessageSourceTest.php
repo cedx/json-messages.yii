@@ -3,28 +3,18 @@ namespace yii\i18n;
 
 use PHPUnit\Framework\{TestCase};
 
-/**
- * Tests the features of the `yii\i18n\YamlMessageSource` class.
- */
+/** Tests the features of the `yii\i18n\YamlMessageSource` class. */
 class YamlMessageSourceTest extends TestCase {
 
-  /**
-   * @var \ReflectionClass The object used to change the visibility of inaccessible class members.
-   */
+  /** @var \ReflectionClass The object used to change the visibility of inaccessible class members. */
   private static $reflection;
 
-  /**
-   * This method is called before the first test of this test class is run.
-   * @beforeClass
-   */
+  /** @beforeClass This method is called before the first test of this test class is run. */
   static function setUpBeforeClass(): void {
     static::$reflection = new \ReflectionClass(YamlMessageSource::class);
   }
 
-  /**
-   * Tests the `YamlMessageSource::flatten()` method.
-   * @test
-   */
+  /** @test Tests the `YamlMessageSource::flatten()` method. */
   function testFlatten(): void {
     $method = static::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -78,10 +68,7 @@ class YamlMessageSourceTest extends TestCase {
     ]));
   }
 
-  /**
-   * Tests the `YamlMessageSource::getMessageFilePath()` method.
-   * @test
-   */
+  /** @test Tests the `YamlMessageSource::getMessageFilePath()` method. */
   function testGetMessageFilePath(): void {
     $method = static::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -97,10 +84,7 @@ class YamlMessageSourceTest extends TestCase {
     assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.yml"));
   }
 
-  /**
-   * Tests the `YamlMessageSource::loadMessagesFromFile()` method.
-   * @test
-   */
+  /** @test Tests the `YamlMessageSource::loadMessagesFromFile()` method. */
   function testLoadMessagesFromFile(): void {
     $method = static::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -122,10 +106,7 @@ class YamlMessageSourceTest extends TestCase {
     assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
-  /**
-   * Tests the `YamlMessageSource::parseMessages()` method.
-   * @test
-   */
+  /** @test Tests the `YamlMessageSource::parseMessages()` method. */
   function testParseMessages(): void {
     $method = static::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);

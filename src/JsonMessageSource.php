@@ -3,14 +3,10 @@ namespace yii\i18n;
 
 use yii\helpers\{Json};
 
-/**
- * Represents a message source that stores translated messages in JSON files.
- */
+/** Represents a message source that stores translated messages in JSON files. */
 class JsonMessageSource extends FileMessageSource {
 
-  /**
-   * @var string The extension of the JSON files.
-   */
+  /** @var string The extension of the JSON files. */
   public $fileExtension = 'json';
 
   /**

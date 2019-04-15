@@ -3,14 +3,10 @@ namespace yii\i18n;
 
 use Symfony\Component\Yaml\{Yaml};
 
-/**
- * Represents a message source that stores translated messages in YAML files.
- */
+/** Represents a message source that stores translated messages in YAML files. */
 class YamlMessageSource extends FileMessageSource {
 
-  /**
-   * @var string The extension of the YAML files.
-   */
+  /** @var string The extension of the YAML files. */
   public $fileExtension = 'yaml';
 
   /**
