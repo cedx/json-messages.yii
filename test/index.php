@@ -10,7 +10,7 @@ $rootPath = dirname(__DIR__);
 require_once "$rootPath/vendor/autoload.php";
 require_once "$rootPath/vendor/yiisoft/yii2/Yii.php";
 Yii::setAlias('@root', $rootPath);
-Yii::setAlias('@yii/i18n', "$rootPath/src");
+Yii::setAlias('@yii/i18n', "$rootPath/lib");
 
 // Start the application.
-new Application(['id' => 'yii2-json-messages', 'basePath' => '@root/src']);
+new Application(['id' => 'yii2-json-messages', 'basePath' => '@root/lib']);
