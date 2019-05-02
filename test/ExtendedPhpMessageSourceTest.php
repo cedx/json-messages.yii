@@ -14,7 +14,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     static::$reflection = new \ReflectionClass(ExtendedPhpMessageSource::class);
   }
 
-  /** @test Tests the `ExtendedPhpMessageSource::flatten()` method. */
+  /** @test ExtendedPhpMessageSource->flatten() */
   function testFlatten(): void {
     $method = static::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -68,7 +68,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     ]));
   }
 
-  /** @test Tests the `ExtendedPhpMessageSource::getMessageFilePath()` method. */
+  /** @test ExtendedPhpMessageSource->getMessageFilePath() */
   function testGetMessageFilePath(): void {
     $method = static::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -84,7 +84,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.php7"));
   }
 
-  /** @test Tests the `ExtendedPhpMessageSource::loadMessagesFromFile()` method. */
+  /** @test ExtendedPhpMessageSource->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
     $method = static::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -106,7 +106,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
-  /** @test Tests the `ExtendedPhpMessageSource::parseMessages()` method. */
+  /** @test ExtendedPhpMessageSource->parseMessages() */
   function testParseMessages(): void {
     $method = static::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);

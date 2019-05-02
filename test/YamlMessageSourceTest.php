@@ -14,7 +14,7 @@ class YamlMessageSourceTest extends TestCase {
     static::$reflection = new \ReflectionClass(YamlMessageSource::class);
   }
 
-  /** @test Tests the `YamlMessageSource::flatten()` method. */
+  /** @test YamlMessageSource->flatten() */
   function testFlatten(): void {
     $method = static::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -68,7 +68,7 @@ class YamlMessageSourceTest extends TestCase {
     ]));
   }
 
-  /** @test Tests the `YamlMessageSource::getMessageFilePath()` method. */
+  /** @test YamlMessageSource->getMessageFilePath() */
   function testGetMessageFilePath(): void {
     $method = static::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -84,7 +84,7 @@ class YamlMessageSourceTest extends TestCase {
     assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.yml"));
   }
 
-  /** @test Tests the `YamlMessageSource::loadMessagesFromFile()` method. */
+  /** @test YamlMessageSource->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
     $method = static::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -106,7 +106,7 @@ class YamlMessageSourceTest extends TestCase {
     assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
-  /** @test Tests the `YamlMessageSource::parseMessages()` method. */
+  /** @test YamlMessageSource->parseMessages() */
   function testParseMessages(): void {
     $method = static::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);

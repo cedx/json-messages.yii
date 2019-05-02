@@ -14,7 +14,7 @@ class JsonMessageSourceTest extends TestCase {
     static::$reflection = new \ReflectionClass(JsonMessageSource::class);
   }
 
-  /** @test Tests the `JsonMessageSource::flatten()` method. */
+  /** @test JsonMessageSource->flatten() */
   function testFlatten(): void {
     $method = static::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -68,7 +68,7 @@ class JsonMessageSourceTest extends TestCase {
     ]));
   }
 
-  /** @test Tests the `JsonMessageSource::getMessageFilePath()` method. */
+  /** @test JsonMessageSource->getMessageFilePath() */
   function testGetMessageFilePath(): void {
     $method = static::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -84,7 +84,7 @@ class JsonMessageSourceTest extends TestCase {
     assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.json5"));
   }
 
-  /** @test Tests the `JsonMessageSource::loadMessagesFromFile()` method. */
+  /** @test JsonMessageSource->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
     $method = static::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -106,7 +106,7 @@ class JsonMessageSourceTest extends TestCase {
     assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
-  /** @test Tests the `JsonMessageSource::parseMessages()` method. */
+  /** @test JsonMessageSource->parseMessages() */
   function testParseMessages(): void {
     $method = static::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);
