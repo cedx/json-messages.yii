@@ -37,15 +37,15 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "symfony/yaml": "^4.2.8",
+    "symfony/yaml": "^4.3.0",
     "yiisoft/yii2": "^2.0.19"
   },
   "require-dev": {
     "cedx/coveralls": "^10.1.0",
     "consolidation/robo": "^1.4.9",
     "henrikbjorn/lurker": "^1.2.0",
-    "phpstan/phpstan": "^0.11.7",
-    "phpunit/phpunit": "^8.1.5"
+    "phpstan/phpstan": "^0.11.8",
+    "phpunit/phpunit": "^8.1.6"
   },
   "scripts": {
     "coverage": "robo coverage",
