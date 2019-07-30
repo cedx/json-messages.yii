@@ -12,12 +12,12 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @beforeClass This method is called before the first test of this test class is run. */
   static function setUpBeforeClass(): void {
-    static::$reflection = new \ReflectionClass(ExtendedPhpMessageSource::class);
+    self::$reflection = new \ReflectionClass(ExtendedPhpMessageSource::class);
   }
 
   /** @test ExtendedPhpMessageSource->flatten() */
   function testFlatten(): void {
-    $method = static::$reflection->getMethod('flatten');
+    $method = self::$reflection->getMethod('flatten');
     $method->setAccessible(true);
 
     it('should merge the keys of a multidimensional array', function() use ($method) {
@@ -73,7 +73,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @test ExtendedPhpMessageSource->getMessageFilePath() */
   function testGetMessageFilePath(): void {
-    $method = static::$reflection->getMethod('getMessageFilePath');
+    $method = self::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
 
     it('should return the proper path to the message file', function() use ($method) {
@@ -91,7 +91,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @test ExtendedPhpMessageSource->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
-    $method = static::$reflection->getMethod('loadMessagesFromFile');
+    $method = self::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
 
     it('should properly load the JSON source and parse it as array', function() use ($method) {
@@ -115,7 +115,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @test ExtendedPhpMessageSource->parseMessages() */
   function testParseMessages(): void {
-    $method = static::$reflection->getMethod('parseMessages');
+    $method = self::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);
 
     it('should parse a PHP file as a hierarchical array', function() use ($method) {
