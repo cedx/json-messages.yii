@@ -12,7 +12,7 @@
 - Replaced the [Phing](https://www.phing.info) build system by [Robo](https://robo.li).
 
 ## Version [5.0.0](https://github.com/cedx/yii2-json-messages/compare/v4.1.0...v5.0.0)
-- Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: raised the required [PHP](https://www.php.net) version.
 - Updated the package dependencies.
 
 ## Version [4.1.0](https://github.com/cedx/yii2-json-messages/compare/v4.0.0...v4.1.0)
@@ -20,7 +20,7 @@
 - Updated the package dependencies.
 
 ## Version [4.0.0](https://github.com/cedx/yii2-json-messages/compare/v3.0.0...v4.0.0)
-- Breaking change: raised the required [PHP](https://secure.php.net) version.
+- Breaking change: raised the required [PHP](https://www.php.net) version.
 - Breaking change: removed the `jsonSerialize()` and `__toString()` methods.
 - Breaking change: using PHP 7.1 features, like void functions.
 
@@ -71,7 +71,7 @@
 - Updated the package dependencies.
 
 ## Version [0.5.0](https://github.com/cedx/yii2-json-messages/compare/v0.4.3...v0.5.0)
-- Breaking change: using [PHP 7](https://secure.php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
+- Breaking change: using [PHP 7](https://www.php.net/manual/en/migration70.new-features.php) features, like scalar and return type declarations.
 
 ## Version [0.4.3](https://github.com/cedx/yii2-json-messages/compare/v0.4.2...v0.4.3)
 - Added code coverage.
@@ -101,8 +101,8 @@
 - Breaking change: ported the library API to [Yii](https://www.yiiframework.com) version 2.
 
 ## Version [0.2.0](https://github.com/cedx/yii2-json-messages/compare/v0.1.1...v0.2.0)
-- Breaking change: ported the library API to [namespaces](https://secure.php.net/manual/en/language.namespaces.php).
-- Lowered the required [PHP](https://secure.php.net) version.
+- Breaking change: ported the library API to [namespaces](https://www.php.net/manual/en/language.namespaces.php).
+- Lowered the required [PHP](https://www.php.net) version.
 
 ## Version [0.1.1](https://github.com/cedx/yii2-json-messages/compare/v0.1.0...v0.1.1)
 - Using [Gulp](https://gulpjs.com) as build system.
