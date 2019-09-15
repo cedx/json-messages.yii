@@ -120,7 +120,7 @@ class JsonMessageSourceTest extends TestCase {
 
     it('should parse a JSON file as a hierarchical array', function() use ($method) {
       $model = new JsonMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messages = $method->invoke($model, (string) file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.json")));
+      $messages = $method->invoke($model, (string) @file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.json")));
       expect($messages)->to->equal([
         'Hello World!' => 'Bonjour le monde !',
         'foo' => ['bar' => ['baz' => 'FooBarBaz']]

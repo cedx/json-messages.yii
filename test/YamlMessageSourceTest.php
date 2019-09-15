@@ -120,7 +120,7 @@ class YamlMessageSourceTest extends TestCase {
 
     it('should parse a YAML file as a hierarchical array', function() use ($method) {
       $model = new YamlMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messages = $method->invoke($model, (string) file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.yaml")));
+      $messages = $method->invoke($model, (string) @file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.yaml")));
       expect($messages)->to->equal([
         'Hello World!' => 'Bonjour le monde !',
         'foo' => ['bar' => ['baz' => 'FooBarBaz']]

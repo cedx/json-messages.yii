@@ -120,7 +120,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
     it('should parse a PHP file as a hierarchical array', function() use ($method) {
       $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messages = $method->invoke($model, (string) file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
+      $messages = $method->invoke($model, (string) @file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
       expect($messages)->to->equal([
         'Hello World!' => 'Bonjour le monde !',
         'foo' => ['bar' => ['baz' => 'FooBarBaz']]
