@@ -4,7 +4,7 @@ namespace yii\i18n;
 use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
 
-/** Tests the features of the `yii\i18n\ExtendedPhpMessageSource` class. */
+/** @testdox yii\i18n\ExtendedPhpMessageSource */
 class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @var \ReflectionClass The object used to change the visibility of inaccessible class members. */
@@ -15,7 +15,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     self::$reflection = new \ReflectionClass(ExtendedPhpMessageSource::class);
   }
 
-  /** @test ExtendedPhpMessageSource->flatten() */
+  /** @testdox ->flatten() */
   function testFlatten(): void {
     $method = self::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -71,7 +71,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test ExtendedPhpMessageSource->getMessageFilePath() */
+  /** @testdox ->getMessageFilePath() */
   function testGetMessageFilePath(): void {
     $method = self::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -89,7 +89,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test ExtendedPhpMessageSource->loadMessagesFromFile() */
+  /** @testdox ->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
     $method = self::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -113,7 +113,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test ExtendedPhpMessageSource->parseMessages() */
+  /** @testdox ->parseMessages() */
   function testParseMessages(): void {
     $method = self::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);

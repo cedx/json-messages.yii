@@ -4,7 +4,7 @@ namespace yii\i18n;
 use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
 
-/** Tests the features of the `yii\i18n\JsonMessageSource` class. */
+/** @testdox yii\i18n\JsonMessageSource */
 class JsonMessageSourceTest extends TestCase {
 
   /** @var \ReflectionClass The object used to change the visibility of inaccessible class members. */
@@ -15,7 +15,7 @@ class JsonMessageSourceTest extends TestCase {
     self::$reflection = new \ReflectionClass(JsonMessageSource::class);
   }
 
-  /** @test JsonMessageSource->flatten() */
+  /** @testdox ->flatten() */
   function testFlatten(): void {
     $method = self::$reflection->getMethod('flatten');
     $method->setAccessible(true);
@@ -71,7 +71,7 @@ class JsonMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test JsonMessageSource->getMessageFilePath() */
+  /** @testdox ->getMessageFilePath() */
   function testGetMessageFilePath(): void {
     $method = self::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
@@ -89,7 +89,7 @@ class JsonMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test JsonMessageSource->loadMessagesFromFile() */
+  /** @testdox ->loadMessagesFromFile() */
   function testLoadMessagesFromFile(): void {
     $method = self::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
@@ -113,7 +113,7 @@ class JsonMessageSourceTest extends TestCase {
     });
   }
 
-  /** @test JsonMessageSource->parseMessages() */
+  /** @testdox ->parseMessages() */
   function testParseMessages(): void {
     $method = self::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);
