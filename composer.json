@@ -37,7 +37,7 @@
     "ext-pcre": "*",
     "ext-spl": "*",
     "symfony/yaml": "^4.3.5",
-    "yiisoft/yii2": "^2.0.28"
+    "yiisoft/yii2": "^2.0.29"
   },
   "require-dev": {
     "cedx/coveralls": "^11.2.0",
