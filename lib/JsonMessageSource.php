@@ -7,7 +7,7 @@ use yii\helpers\{Json};
 class JsonMessageSource extends FileMessageSource {
 
   /** @var string The extension of the JSON files. */
-  public $fileExtension = 'json';
+  public string $fileExtension = 'json';
 
   /**
    * Parses the translations contained in the specified input data.

@@ -7,13 +7,13 @@ use yii\helpers\{FileHelper};
 abstract class FileMessageSource extends PhpMessageSource {
 
   /** @var bool Value indicating whether nested objects are enabled. */
-  public $enableNesting = false;
+  public bool $enableNesting = false;
 
   /** @var string The extension of the message files. */
-  public $fileExtension = '';
+  public string $fileExtension = '';
 
   /** @var string The string used to delimit properties of nested objects. */
-  public $nestingSeparator = '.';
+  public string $nestingSeparator = '.';
 
   /** Initializes this object. */
   function init(): void {

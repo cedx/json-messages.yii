@@ -5,7 +5,7 @@ namespace yii\i18n;
 class ExtendedPhpMessageSource extends FileMessageSource {
 
   /** @var string The extension of the PHP files. */
-  public $fileExtension = 'php';
+  public string $fileExtension = 'php';
 
   /**
    * Parses the translations contained in the specified input data.

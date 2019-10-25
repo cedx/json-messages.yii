@@ -7,7 +7,7 @@ use Symfony\Component\Yaml\{Yaml};
 class YamlMessageSource extends FileMessageSource {
 
   /** @var string The extension of the YAML files. */
-  public $fileExtension = 'yaml';
+  public string $fileExtension = 'yaml';
 
   /**
    * Parses the translations contained in the specified input data.
