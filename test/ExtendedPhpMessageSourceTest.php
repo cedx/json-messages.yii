@@ -8,7 +8,7 @@ use PHPUnit\Framework\{TestCase};
 class ExtendedPhpMessageSourceTest extends TestCase {
 
   /** @var \ReflectionClass The object used to change the visibility of inaccessible class members. */
-  private static $reflection;
+  private static \ReflectionClass $reflection;
 
   /** @beforeClass This method is called before the first test of this test class is run. */
   static function setUpBeforeClass(): void {
