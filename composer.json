@@ -36,13 +36,13 @@
     "ext-json": "*",
     "ext-pcre": "*",
     "ext-spl": "*",
-    "symfony/yaml": "^4.3.5",
+    "symfony/yaml": "^4.3.6",
     "yiisoft/yii2": "^2.0.29"
   },
   "require-dev": {
     "cedx/coveralls": "^11.2.0",
     "cedx/phpunit-expect": "^0.8.0",
-    "consolidation/robo": "^1.4.10",
+    "consolidation/robo": "^1.4.11",
     "henrikbjorn/lurker": "^1.2.0",
     "phpstan/phpstan": "^0.11.19"
   },
