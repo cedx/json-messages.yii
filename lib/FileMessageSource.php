@@ -35,7 +35,7 @@ abstract class FileMessageSource extends PhpMessageSource {
   /**
    * Loads the message translation for the specified language and category.
    * @param string $messageFile string The path to message file.
-   * @return string[]|null The message array, or a `null` reference if the file is not found.
+   * @return array<string, string>|null The message array, or a `null` reference if the file is not found.
    */
   protected function loadMessagesFromFile($messageFile): ?array {
     if (!is_file($messageFile)) return null;
@@ -46,14 +46,14 @@ abstract class FileMessageSource extends PhpMessageSource {
   /**
    * Parses the translations contained in the specified input data.
    * @param string $messageData The input data.
-   * @return array The translations contained in the specified input data.
+   * @return array<string, array|string> The translations contained in the specified input data.
    */
   abstract protected function parseMessages(string $messageData): array;
 
   /**
    * Flattens a multidimensional array into a single array where the keys are property paths to the contained scalar values.
-   * @param array $array The input array.
-   * @return array The flattened array.
+   * @param array<string, array|string> $array The input array.
+   * @return array<string, string> The flattened array.
    */
   protected function flatten(array $array): array {
     $flatMap = [];

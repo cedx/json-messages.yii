@@ -7,7 +7,7 @@ use PHPUnit\Framework\{TestCase};
 /** @testdox yii\i18n\ExtendedPhpMessageSource */
 class ExtendedPhpMessageSourceTest extends TestCase {
 
-  /** @var \ReflectionClass The object used to change the visibility of inaccessible class members. */
+  /** @var \ReflectionClass<ExtendedPhpMessageSource> The object used to change the visibility of inaccessible class members. */
   private static \ReflectionClass $reflection;
 
   /** @beforeClass This method is called before the first test of this test class is run. */

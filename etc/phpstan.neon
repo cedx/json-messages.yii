@@ -1,4 +1,7 @@
 parameters:
-  ignoreErrors: ['/on an unknown class Yii/']
   level: max
-  paths: [lib, test]
+  paths: [../lib, ../test]
+  ignoreErrors:
+    - '/Method yii\\i18n\\FileMessageSource::loadMessagesFromFile\(\) should return/'
+    - '/on a separate line does not do anything/'
+    - '/on an unknown class Yii/'
