@@ -3,6 +3,7 @@
 ## Version [6.0.0](https://github.com/cedx/yii2-json-messages/compare/v5.2.0...v6.0.0)
 - Breaking change: raised the required [PHP](https://www.php.net) version.
 - Breaking change: using PHP 7.4 features, like arrow functions and typed properties.
+- Updated the package dependencies.
 
 ## Version [5.2.0](https://github.com/cedx/yii2-json-messages/compare/v5.1.0...v5.2.0)
 - Modified the package layout.
