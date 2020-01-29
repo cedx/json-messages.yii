@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
+use yii\helpers\{ArrayHelper};
+
 /** Represents a message source that stores translated messages in PHP files. */
 class ExtendedPhpMessageSource extends FileMessageSource {
 
@@ -13,7 +15,7 @@ class ExtendedPhpMessageSource extends FileMessageSource {
    * @return array<string, array|string> The translations contained in the specified input data.
    */
   protected function parseMessages(string $messageData): array {
-    assert(mb_strlen($messageData) > 0);
-    return is_array($messages = eval("?>$messageData")) ? $messages : [];
+    assert(mb_substr($messageData, 0, 5) == '<?php');
+    return ArrayHelper::isAssociative($messages = eval("?>$messageData")) ? $messages : [];
   }
 }

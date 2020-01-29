@@ -2,6 +2,7 @@
 namespace yii\i18n;
 
 use Symfony\Component\Yaml\{Yaml};
+use yii\helpers\{ArrayHelper};
 
 /** Represents a message source that stores translated messages in YAML files. */
 class YamlMessageSource extends FileMessageSource {
@@ -16,6 +17,6 @@ class YamlMessageSource extends FileMessageSource {
    */
   protected function parseMessages(string $messageData): array {
     assert(mb_strlen($messageData) > 0);
-    return is_array($messages = Yaml::parse($messageData)) ? $messages : [];
+    return ArrayHelper::isAssociative($messages = Yaml::parse($messageData)) ? $messages : [];
   }
 }

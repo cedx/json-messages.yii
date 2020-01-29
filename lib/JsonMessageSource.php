@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use yii\helpers\{Json};
+use yii\helpers\{ArrayHelper, Json};
 
 /** Represents a message source that stores translated messages in JSON files. */
 class JsonMessageSource extends FileMessageSource {
@@ -16,6 +16,6 @@ class JsonMessageSource extends FileMessageSource {
    */
   protected function parseMessages(string $messageData): array {
     assert(mb_strlen($messageData) > 0);
-    return is_array($messages = Json::decode($messageData)) ? $messages : [];
+    return ArrayHelper::isAssociative($messages = Json::decode($messageData)) ? $messages : [];
   }
 }
