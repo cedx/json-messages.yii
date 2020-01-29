@@ -129,7 +129,7 @@ class YamlMessageSourceTest extends TestCase {
 
     it('should parse an invalid YAML file as an empty array', function() use ($method) {
       $model = new YamlMessageSource(['basePath' => '@root/test/fixtures']);
-      expect($method->invoke($model, ''))->to->be->empty;
+      expect($method->invoke($model, '[foo, bar]'))->to->be->empty;
     });
   }
 }

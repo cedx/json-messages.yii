@@ -129,7 +129,7 @@ class ExtendedPhpMessageSourceTest extends TestCase {
 
     it('should parse an invalid PHP file as an empty array', function() use ($method) {
       $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
-      expect($method->invoke($model, ''))->to->be->empty;
+      expect($method->invoke($model, '<?php return ["foo", "bar"];'))->to->be->empty;
     });
   }
 }
