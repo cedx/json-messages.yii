@@ -15,6 +15,7 @@ class YamlMessageSource extends FileMessageSource {
    * @return array<string, array|string> The translations contained in the specified input data.
    */
   protected function parseMessages(string $messageData): array {
+    assert(mb_strlen($messageData) > 0);
     return is_array($messages = Yaml::parse($messageData)) ? $messages : [];
   }
 }
