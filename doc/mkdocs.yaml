@@ -3,7 +3,7 @@ site_description: JSON and YAML message sources for Yii, high-performance PHP fr
 site_author: Cédric Belin - cedric@belin.io
 site_url: https://dev.belin.io/yii2-json-messages
 
-docs_dir: ../doc
+docs_dir: .
 site_dir: ../web
 
 repo_name: GitHub
