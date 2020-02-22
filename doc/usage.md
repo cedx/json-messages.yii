@@ -52,7 +52,7 @@ Within a [YAML](http://yaml.org) file, an object literal of (source, translation
 ```
 
 ## Nested objects
-It is a common practice to use keys instead of original messages, alongside the enablement of the [`yii\i18n\MessageSource::$forceTranslation`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-messagesource#$forceTranslation-detail) property. For example:
+It is a common practice to use keys instead of original messages, alongside the enablement of the [`yii\i18n\MessageSource->forceTranslation`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-messagesource#$forceTranslation-detail) property. For example:
 
 ```json
 {
@@ -99,7 +99,7 @@ function main(): void {
 }
 ```
 
-To optin for this feature, you must set the `$enableNesting` property.
+To optin for this feature, you must set the `enableNesting` property.
 In the application configuration file:
 
 ```php
@@ -117,7 +117,7 @@ In the application configuration file:
 ];
 ```
 
-If you don't want to use the dot notation, you can customize the character(s) used by setting the `$nestingSeparator` property. For example, to use the slash character (e.g. `/`) as property delimiter:
+If you don't want to use the dot notation, you can customize the character(s) used by setting the `nestingSeparator` property. For example, to use the slash character (e.g. `/`) as property delimiter:
 
 ```php
 <?php return [
