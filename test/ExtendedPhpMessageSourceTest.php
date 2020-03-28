@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use function PHPUnit\Expect\{expect, it};
 use PHPUnit\Framework\{TestCase};
+use function PHPUnit\Framework\{assertThat, equalTo, isEmpty};
 
 /** @testdox yii\i18n\ExtendedPhpMessageSource */
 class ExtendedPhpMessageSourceTest extends TestCase {
@@ -20,55 +20,53 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     $method = self::$reflection->getMethod('flatten');
     $method->setAccessible(true);
 
-    it('should merge the keys of a multidimensional array', function() use ($method) {
-      $model = new ExtendedPhpMessageSource;
-      expect($method->invoke($model, []))->to->equal([]);
-      expect($method->invoke($model, ['foo' => 'bar', 'baz' => 'qux']))->to->equal(['foo' => 'bar', 'baz' => 'qux']);
-      expect($method->invoke($model, ['foo' => ['bar' => 'baz']]))->to->equal(['foo.bar' => 'baz']);
+    // It should merge the keys of a multidimensional array.
+    $model = new ExtendedPhpMessageSource;
+    assertThat($method->invoke($model, []), equalTo([]));
+    assertThat($method->invoke($model, ['foo' => 'bar', 'baz' => 'qux']), equalTo(['foo' => 'bar', 'baz' => 'qux']));
+    assertThat($method->invoke($model, ['foo' => ['bar' => 'baz']]), equalTo(['foo.bar' => 'baz']));
 
-      $source = [
+    $source = [
+      'foo' => 'bar',
+      'bar' => ['baz' => 'qux'],
+      'baz' => ['qux' => [
         'foo' => 'bar',
-        'bar' => ['baz' => 'qux'],
-        'baz' => ['qux' => [
-          'foo' => 'bar',
-          'bar' => 'baz'
-        ]]
-      ];
+        'bar' => 'baz'
+      ]]
+    ];
 
-      expect($method->invoke($model, $source))->to->equal([
-        'foo' => 'bar',
-        'bar.baz' => 'qux',
-        'baz.qux.foo' => 'bar',
-        'baz.qux.bar' => 'baz'
-      ]);
-    });
+    assertThat($method->invoke($model, $source), equalTo([
+      'foo' => 'bar',
+      'bar.baz' => 'qux',
+      'baz.qux.foo' => 'bar',
+      'baz.qux.bar' => 'baz'
+    ]));
 
-    it('should allow different nesting separators', function() use ($method) {
-      $source = [
+    // It should allow different nesting separators.
+    $source = [
+      'foo' => 'bar',
+      'bar' => ['baz' => 'qux'],
+      'baz' => ['qux' => [
         'foo' => 'bar',
-        'bar' => ['baz' => 'qux'],
-        'baz' => ['qux' => [
-          'foo' => 'bar',
-          'bar' => 'baz'
-        ]]
-      ];
+        'bar' => 'baz'
+      ]]
+    ];
 
-      $model = new ExtendedPhpMessageSource(['nestingSeparator' => '/']);
-      expect($method->invoke($model, $source))->to->equal([
-        'foo' => 'bar',
-        'bar/baz' => 'qux',
-        'baz/qux/foo' => 'bar',
-        'baz/qux/bar' => 'baz'
-      ]);
+    $model = new ExtendedPhpMessageSource(['nestingSeparator' => '/']);
+    assertThat($method->invoke($model, $source), equalTo([
+      'foo' => 'bar',
+      'bar/baz' => 'qux',
+      'baz/qux/foo' => 'bar',
+      'baz/qux/bar' => 'baz'
+    ]));
 
-      $model = new ExtendedPhpMessageSource(['nestingSeparator' => '->']);
-      expect($method->invoke($model, $source))->to->equal([
-        'foo' => 'bar',
-        'bar->baz' => 'qux',
-        'baz->qux->foo' => 'bar',
-        'baz->qux->bar' => 'baz'
-      ]);
-    });
+    $model = new ExtendedPhpMessageSource(['nestingSeparator' => '->']);
+    assertThat($method->invoke($model, $source), equalTo([
+      'foo' => 'bar',
+      'bar->baz' => 'qux',
+      'baz->qux->foo' => 'bar',
+      'baz->qux->bar' => 'baz'
+    ]));
   }
 
   /** @testdox ->getMessageFilePath() */
@@ -76,17 +74,15 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     $method = self::$reflection->getMethod('getMessageFilePath');
     $method->setAccessible(true);
 
-    it('should return the proper path to the message file', function() use ($method) {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
-      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.php');
-      expect($method->invoke($model, 'messages', 'fr'))->to->equal($messageFile);
-    });
+    // It should return the proper path to the message file.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
+    $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages.php');
+    assertThat($method->invoke($model, 'messages', 'fr'), equalTo($messageFile));
 
-    it('should should support different file extensions', function() use ($method) {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'fileExtension' => 'php7']);
-      $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages');
-      expect($method->invoke($model, 'messages', 'fr'))->to->equal("$messageFile.php7");
-    });
+    // It should should support different file extensions.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'fileExtension' => 'php7']);
+    $messageFile = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/fixtures/fr/messages');
+    assertThat($method->invoke($model, 'messages', 'fr'), equalTo("$messageFile.php7"));
   }
 
   /** @testdox ->loadMessagesFromFile() */
@@ -94,23 +90,21 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     $method = self::$reflection->getMethod('loadMessagesFromFile');
     $method->setAccessible(true);
 
-    it('should properly load the JSON source and parse it as array', function() use ($method) {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.php");
-      expect($method->invoke($model, $messageFile))->to->equal([
-        'Hello World!' => 'Bonjour le monde !',
-        'foo.bar.baz' => 'FooBarBaz'
-      ]);
-    });
+    // It should properly load the JSON source and parse it as array.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+    $messageFile = \Yii::getAlias("{$model->basePath}/fr/messages.php");
+    assertThat($method->invoke($model, $messageFile), equalTo([
+      'Hello World!' => 'Bonjour le monde !',
+      'foo.bar.baz' => 'FooBarBaz'
+    ]));
 
-    it('should enable proper translation of source strings', function() {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      expect($model->translate('messages', 'Hello World!', 'fr'))->to->equal('Bonjour le monde !');
-      expect($model->translate('messages', 'foo.bar.baz', 'fr'))->to->equal('FooBarBaz');
+    // It should enable proper translation of source strings.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+    assertThat($model->translate('messages', 'Hello World!', 'fr'), equalTo('Bonjour le monde !'));
+    assertThat($model->translate('messages', 'foo.bar.baz', 'fr'), equalTo('FooBarBaz'));
 
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true, 'nestingSeparator' => '/']);
-      expect($model->translate('messages', 'foo/bar/baz', 'fr'))->to->equal('FooBarBaz');
-    });
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true, 'nestingSeparator' => '/']);
+    assertThat($model->translate('messages', 'foo/bar/baz', 'fr'), equalTo('FooBarBaz'));
   }
 
   /** @testdox ->parseMessages() */
@@ -118,18 +112,16 @@ class ExtendedPhpMessageSourceTest extends TestCase {
     $method = self::$reflection->getMethod('parseMessages');
     $method->setAccessible(true);
 
-    it('should parse a PHP file as a hierarchical array', function() use ($method) {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
-      $messages = $method->invoke($model, (string) @file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
-      expect($messages)->to->equal([
-        'Hello World!' => 'Bonjour le monde !',
-        'foo' => ['bar' => ['baz' => 'FooBarBaz']]
-      ]);
-    });
+    // It should parse a PHP file as a hierarchical array.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures', 'enableNesting' => true]);
+    $messages = $method->invoke($model, (string) @file_get_contents(\Yii::getAlias("{$model->basePath}/fr/messages.php")));
+    assertThat($messages, equalTo([
+      'Hello World!' => 'Bonjour le monde !',
+      'foo' => ['bar' => ['baz' => 'FooBarBaz']]
+    ]));
 
-    it('should parse an invalid PHP file as an empty array', function() use ($method) {
-      $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
-      expect($method->invoke($model, '<?php return ["foo", "bar"];'))->to->be->empty;
-    });
+    // It should parse an invalid PHP file as an empty array.
+    $model = new ExtendedPhpMessageSource(['basePath' => '@root/test/fixtures']);
+    assertThat($method->invoke($model, '<?php return ["foo", "bar"];'), isEmpty());
   }
 }
