@@ -1,7 +1,7 @@
 parameters:
+  excludes_analyse: [../test/fixtures]
   level: max
   paths: [../lib, ../test]
   ignoreErrors:
     - '/Method yii\\i18n\\FileMessageSource::loadMessagesFromFile\(\) should return/'
-    - '/on a separate line does not do anything/'
     - '/on an unknown class Yii/'
