@@ -5,8 +5,8 @@ They extends from [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc
 !!! tip
     See the [Yii guide](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#message-translation) for more information about internationalization and message translation.
 
-### Using a JSON catalog
-In your application configuration file, use the following message source:
+## Using a JSON catalog
+In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/en/concept-configurations#application-configurations) file, use the following message source:
 
 ```php
 <?php return [
@@ -29,8 +29,8 @@ Within a [JSON](https://json.org) file, an object literal of (source, translatio
 }
 ```
 
-### Using a YAML catalog
-In your application configuration file, use the following message source:
+## Using a YAML catalog
+In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/en/concept-configurations#application-configurations) file, use the following message source:
 
 ```php
 <?php return [
@@ -99,7 +99,7 @@ function main(): void {
 }
 ```
 
-To optin for this feature, you must set the `enableNesting` property.
+To opt in for this feature, you must set the `enableNesting` property.
 In the application configuration file:
 
 ```php
@@ -117,7 +117,7 @@ In the application configuration file:
 ];
 ```
 
-If you don't want to use the dot notation, you can customize the character(s) used by setting the `nestingSeparator` property. For example, to use the slash character (e.g. `/`) as property delimiter:
+If you don't want to use the dot notation, you can customize the character(s) used by setting the `nestingSeparator` property. For example, to use the slash character (e.g. `"/"`) as property delimiter:
 
 ```php
 <?php return [
