@@ -1,7 +1,5 @@
 parameters:
   excludes_analyse: [../test/fixtures]
+  ignoreErrors: ['/on an unknown class Yii/']
   level: max
   paths: [../src, ../test]
-  ignoreErrors:
-    - '/Method yii\\i18n\\FileMessageSource::loadMessagesFromFile\(\) should return/'
-    - '/on an unknown class Yii/'
