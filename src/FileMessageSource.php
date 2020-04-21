@@ -42,9 +42,9 @@ abstract class FileMessageSource extends PhpMessageSource {
   protected function loadMessagesFromFile($messageFile): ?array {
     assert(is_string($messageFile) && mb_strlen($messageFile) > 0);
 
-    $file = new \SplFileInfo($messageFile);
+    $file = new \SplFileObject($messageFile);
     if (!$file->isFile()) return null;
-    $messages = $this->parseMessages((string) @file_get_contents($file->getPathname()));
+    $messages = $this->parseMessages((string) $file->fread($file->getSize()));
     return $this->enableNesting ? $this->flatten($messages) : $messages; // @phpstan-ignore-line
   }
 
