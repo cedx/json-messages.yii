@@ -44,5 +44,5 @@ theme:
   name: material
   favicon: img/favicon.ico
   palette:
-    accent: purple
-    primary: purple
+    accent: indigo
+    primary: indigo
