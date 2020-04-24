@@ -1,6 +1,6 @@
 {
   "description": "JSON and YAML message sources for the Yii Framework.",
-  "homepage": "https://dev.belin.io/yii2-json-messages",
+  "homepage": "https://docs.belin.io/yii2-json-messages",
   "license": "MIT",
   "name": "cedx/yii2-json-messages",
   "type": "yii2-extension",
@@ -53,7 +53,7 @@
     "test": "robo test"
   },
   "support": {
-    "docs": "https://dev.belin.io/yii2-json-messages/api",
-    "issues": "https://github.com/cedx/yii2-json-messages/issues"
+    "docs": "https://api.belin.io/yii2-json-messages",
+    "issues": "https://git.belin.io/cedx/yii2-json-messages/issues"
   }
 }
