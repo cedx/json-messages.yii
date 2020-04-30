@@ -43,7 +43,7 @@ abstract class FileMessageSource extends PhpMessageSource {
     assert(is_string($messageFile) && mb_strlen($messageFile) > 0);
 
     $file = new \SplFileObject($messageFile);
-    if (!$file->isFile()) return null;
+    if (!$file->isReadable()) return null;
     $messages = $this->parseMessages((string) $file->fread($file->getSize()));
     return $this->enableNesting ? $this->flatten($messages) : $messages; // @phpstan-ignore-line
   }
