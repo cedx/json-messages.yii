@@ -3,13 +3,13 @@ use yii\i18n\{JsonMessageSource};
 
 /** Translates a message. */
 function main(): void {
-  $i18n = Yii::$app->getI18n();
+	$i18n = Yii::$app->getI18n();
 
-  // Using flat mapping.
-  $i18n->translations['app*'] = new JsonMessageSource;
-  echo Yii::t('app', 'FooBarBaz');
+	// Using flat mapping.
+	$i18n->translations["app*"] = new JsonMessageSource;
+	echo Yii::t("app", "FooBarBaz");
 
-  // Using nested objects.
-  $i18n->translations['app*'] = new JsonMessageSource(['enableNesting' => true]);
-  echo Yii::t('app', 'foo.bar.baz');
+	// Using nested objects.
+	$i18n->translations["app*"] = new JsonMessageSource(["enableNesting" => true]);
+	echo Yii::t("app", "foo.bar.baz");
 }

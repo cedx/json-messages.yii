@@ -1,8 +1,8 @@
 <?php return [
-  'Hello World!' => 'Bonjour le monde !',
-  'foo' => [
-    'bar' => [
-      'baz' => 'FooBarBaz'
-    ]
-  ]
+	"Hello World!" => "Bonjour le monde !",
+	"foo" => [
+		"bar" => [
+			"baz" => "FooBarBaz"
+		]
+	]
 ];
