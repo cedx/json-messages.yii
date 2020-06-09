@@ -7,9 +7,9 @@ function main(): void {
 
 	// Using flat mapping.
 	$i18n->translations["app*"] = new JsonMessageSource;
-	echo Yii::t("app", "FooBarBaz");
+	print Yii::t("app", "FooBarBaz");
 
 	// Using nested objects.
 	$i18n->translations["app*"] = new JsonMessageSource(["enableNesting" => true]);
-	echo Yii::t("app", "foo.bar.baz");
+	print Yii::t("app", "foo.bar.baz");
 }
