@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use yii\helpers\{ArrayHelper};
+use yii\helpers\ArrayHelper;
 
 /** Represents a message source that stores translated messages in PHP files. */
 class ExtendedPhpMessageSource extends FileMessageSource {

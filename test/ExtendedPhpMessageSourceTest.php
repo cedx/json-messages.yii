@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use PHPUnit\Framework\{TestCase};
+use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\{assertThat, equalTo, isEmpty};
 
 /** @testdox yii\i18n\ExtendedPhpMessageSource */

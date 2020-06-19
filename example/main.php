@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-use yii\i18n\{JsonMessageSource};
+use yii\i18n\JsonMessageSource;
 
 /** Translates a message. */
 function main(): void {

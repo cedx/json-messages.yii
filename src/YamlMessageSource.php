@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use Symfony\Component\Yaml\{Yaml};
-use yii\helpers\{ArrayHelper};
+use Symfony\Component\Yaml\Yaml;
+use yii\helpers\ArrayHelper;
 
 /** Represents a message source that stores translated messages in YAML files. */
 class YamlMessageSource extends FileMessageSource {

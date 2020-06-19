@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace yii\i18n;
 
-use yii\helpers\{FileHelper};
+use yii\helpers\FileHelper;
 
 /** Provides the base class for a message source that stores translated messages in files. */
 abstract class FileMessageSource extends PhpMessageSource {
