@@ -94,7 +94,7 @@ And use dot notation to access a translation:
 ``` php
 <?php
 function main(): void {
-	echo \Yii::t("app", "baz.qux.quux");
+	print \Yii::t("app", "baz.qux.quux");
 	// Prints: translated message for key path 'baz.qux.quux'
 }
 ```
@@ -141,10 +141,10 @@ You can then access a translation by using the customized notation:
 <?php
 function main(): void {
 	// Using the slash character.
-	echo \Yii::t("app", "foo/bar/baz");
+	print \Yii::t("app", "foo/bar/baz");
 
 	// Using the "->" string.
-	echo \Yii::t("app", "foo->bar->baz");
+	print \Yii::t("app", "foo->bar->baz");
 }
 ```
 
