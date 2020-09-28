@@ -40,12 +40,12 @@
 		"ext-json": "*",
 		"ext-pcre": "*",
 		"ext-spl": "*",
-		"symfony/yaml": "^5.1.5",
+		"symfony/yaml": "^5.1.6",
 		"yiisoft/yii2": "^2.0.38"
 	},
 	"require-dev": {
 		"cedx/coveralls": "^13.2.0",
-		"phpstan/phpstan": "^0.12.44",
+		"phpstan/phpstan": "^0.12.46",
 		"phpunit/phpunit": "^9.3.11"
 	},
 	"scripts": {
