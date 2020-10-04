@@ -40,13 +40,13 @@
 		"ext-json": "*",
 		"ext-pcre": "*",
 		"ext-spl": "*",
-		"symfony/yaml": "^5.1.6",
+		"symfony/yaml": "^5.1.7",
 		"yiisoft/yii2": "^2.0.38"
 	},
 	"require-dev": {
 		"cedx/coveralls": "^13.2.0",
-		"phpstan/phpstan": "^0.12.46",
-		"phpunit/phpunit": "^9.3.11"
+		"phpstan/phpstan": "^0.12.48",
+		"phpunit/phpunit": "^9.4.0"
 	},
 	"scripts": {
 		"clean": "pwsh tool/clean.ps1",
