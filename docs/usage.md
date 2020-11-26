@@ -1,15 +1,14 @@
 # Usage
 This package provides a set of classes which are message sources that store translated messages in files.
-They extends from [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-phpmessagesource) class, so their usage is basically the same.
+They extends from the `yii\i18n\PhpMessageSource` class, so their usage is basically the same.
 
-!!! tip
-	See the [Yii guide](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#message-translation) for more information about internationalization and message translation.
+?> See the [Yii guide](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#message-translation) for more information about internationalization and message translation.
 
 ## Using a JSON catalog
 In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/en/concept-configurations#application-configurations) file, use the following message source:
 
-``` php
-<?php return [
+```php
+return [
 	"components" => [
 		"i18n" => [
 			"translations" => [
@@ -22,7 +21,7 @@ In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/e
 
 Within a [JSON](https://json.org) file, an object literal of (source, translation) pairs provides the message catalog. For example:
 
-``` json
+```json
 {
 	"original message 1": "translated message 1",
 	"original message 2": "translated message 2"
@@ -32,8 +31,8 @@ Within a [JSON](https://json.org) file, an object literal of (source, translatio
 ## Using a YAML catalog
 In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/en/concept-configurations#application-configurations) file, use the following message source:
 
-``` php
-<?php return [
+```php
+return [
 	"components" => [
 		"i18n" => [
 			"translations" => [
@@ -46,15 +45,15 @@ In your [application configuration](https://www.yiiframework.com/doc/guide/2.0/e
 
 Within a [YAML](http://yaml.org) file, an object literal of (source, translation) pairs provides the message catalog. For example:
 
-``` yaml
+```yaml
 "original message 1": "translated message 1"
 "original message 2": "translated message 2"
 ```
 
 ## Nested objects
-It is a common practice to use keys instead of original messages, alongside the enablement of the [`yii\i18n\MessageSource->forceTranslation`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-messagesource#$forceTranslation-detail) property. For example:
+It is a common practice to use keys instead of original messages, alongside the enablement of the `yii\i18n\MessageSource->forceTranslation` property. For example:
 
-``` json
+```json
 {
 	"foo.bar": "translated message for key 'foo.bar'",
 	"bar.qux": "translated message for key 'bar.qux'"
@@ -64,7 +63,7 @@ It is a common practice to use keys instead of original messages, alongside the 
 The `yii\i18n\JsonMessageSource` and `yii\i18n\YamlMessageSource` classes understand nested objects.
 This means that you can have JSON files that look like this:
 
-``` json
+```json
 {
 	"foo": "translated message for key path 'foo'",
 	"bar": {
@@ -80,7 +79,7 @@ This means that you can have JSON files that look like this:
 
 Or YAML files that look like that:
 
-``` yaml
+```yaml
 foo: "translated message for key path 'foo'"
 bar:
 	qux: "translated message for key path 'bar.qux'"
@@ -91,8 +90,7 @@ baz:
 
 And use dot notation to access a translation:
 
-``` php
-<?php
+```php
 function main(): void {
 	print \Yii::t("app", "baz.qux.quux");
 	// Prints: translated message for key path 'baz.qux.quux'
@@ -102,8 +100,8 @@ function main(): void {
 To opt in for this feature, you must set the `enableNesting` property.
 In the application configuration file:
 
-``` php
-<?php return [
+```php
+return [
 	"components" => [
 		"i18n" => [
 			"translations" => [
@@ -119,8 +117,8 @@ In the application configuration file:
 
 If you don't want to use the dot notation, you can customize the character(s) used by setting the `nestingSeparator` property. For example, to use the slash character (e.g. `"/"`) as property delimiter:
 
-``` php
-<?php return [
+```php
+return [
 	"components" => [
 		"i18n" => [
 			"translations" => [
@@ -137,8 +135,7 @@ If you don't want to use the dot notation, you can customize the character(s) us
 
 You can then access a translation by using the customized notation:
 
-``` php
-<?php
+```php
 function main(): void {
 	// Using the slash character.
 	print \Yii::t("app", "foo/bar/baz");
@@ -148,6 +145,5 @@ function main(): void {
 }
 ```
 
-!!! tip
-	This package also provides the `yii\i18n\ExtendedPhpMessageSource` class.
-	This class adds nested objects support to the [`yii\i18n\PhpMessageSource`](https://www.yiiframework.com/doc/api/2.0/yii-i18n-phpmessagesource) class.
+?> This package also provides the `yii\i18n\ExtendedPhpMessageSource` class.
+This class adds nested objects support to the `yii\i18n\PhpMessageSource` class.

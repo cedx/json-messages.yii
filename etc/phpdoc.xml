@@ -4,11 +4,11 @@
 	xmlns="http://www.phpdoc.org"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="http://docs.phpdoc.org/latest/phpdoc.xsd">
-	
+
 	<title>JSON &amp; YAML Messages for Yii</title>
 	<paths>
 		<cache>../var/phpdoc</cache>
-		<output>../doc/api</output>
+		<output>../docs/api</output>
 	</paths>
 	<version number="6.2.0">
 		<api>
